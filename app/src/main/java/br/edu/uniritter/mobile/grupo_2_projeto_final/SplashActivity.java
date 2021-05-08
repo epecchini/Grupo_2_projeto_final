@@ -20,12 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(i);
-
-                // Fecha esta activity
+                startActivity(new Intent(getBaseContext(), LoginActivity.class));
                 finish();
             }
         }, SPLASH_TIME_OUT);

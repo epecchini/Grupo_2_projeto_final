@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="backActivities">#FFFFFFFF</color>
+    <color name="splashColor">#FF00AEE5</color>
     <color name="buttonColor">#FF00AEE5</color>
 </resources>
