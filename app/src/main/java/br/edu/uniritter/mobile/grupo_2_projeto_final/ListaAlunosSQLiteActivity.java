@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite.BaseHelper;
 
-public class ListaAlunosActivity extends AppCompatActivity {
+public class ListaAlunosSQLiteActivity extends AppCompatActivity {
 
     ListView listView;
     ArrayList<String> listaAlunos;
@@ -21,7 +21,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_alunos);
+        setContentView(R.layout.activity_lista_alunos_sqlite);
         listView=(ListView) findViewById(R.id.listView);
 
         CarregarLista();

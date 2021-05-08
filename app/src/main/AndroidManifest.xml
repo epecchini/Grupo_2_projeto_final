@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Grupo_2_projeto_final">
-        <activity android:name=".ListaAlunosActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ListaAlunosSQLiteActivity"></activity>
+        <activity android:name=".MainSQLiteActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

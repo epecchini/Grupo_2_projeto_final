@@ -18,13 +18,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        usuario = (EditText) findViewById(R.id.usuario);
-        senha = (EditText) findViewById(R.id.senha);
+        usuario = (EditText) findViewById(R.id.tbUsuario);
+        senha = (EditText) findViewById(R.id.tbSenha);
     }
 
     public void clicarBotao (View view){
         if(usuario.getText().toString().equals("Team3") && senha.getText().toString().equals("1234"))
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainSQLiteActivity.class));
         else
             Toast.makeText(this,"Usuario ou senha invalidos",Toast.LENGTH_SHORT).show();
     }

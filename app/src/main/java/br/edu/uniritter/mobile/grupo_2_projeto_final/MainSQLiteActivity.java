@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite.BaseHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainSQLiteActivity extends AppCompatActivity {
 
     EditText editNome;
     Button buttonCadastrar;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_sqlite);
 
         editNome = (EditText) findViewById(R.id.editNome);
         buttonCadastrar = (Button) findViewById(R.id.buttonCadastrar);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         buttonListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ListaAlunosActivity.class));
+                startActivity(new Intent(MainSQLiteActivity.this, ListaAlunosSQLiteActivity.class));
             }
         });
     }
