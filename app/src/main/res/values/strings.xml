@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Computação para dispositívos móveis</string>
-    <string name="LoginTitle">Login</string>
+    <string name="app_name">Entrar para dispositívos móveis</string>
+    <string name="LoginTitle">Entrar</string>
     <string name="entrar">Entrar</string>
 </resources>
