@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="loginTitle">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#27282D</item>
+    </style>
+</resources>
