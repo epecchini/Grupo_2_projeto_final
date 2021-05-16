@@ -65,4 +65,9 @@ public class MainSQLiteActivity extends AppCompatActivity {
             Toast.makeText(this,"Erro" + e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void abrirPendenciasActivity(View view){
+        Intent intent = new Intent(this, PendenciasActivity.class);
+        startActivity(intent);
+    }
 }
