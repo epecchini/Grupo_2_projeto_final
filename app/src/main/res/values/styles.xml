@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="loginTitle">
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">32dp</item>
+        <item name="android:textColor">#27282D</item>
+    </style>
+    <style name="secondTitle">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#00AEE5</item>
+    </style>
+    <style name="subTitle01">
+        <item name="android:textSize">18dp</item>
         <item name="android:textColor">#27282D</item>
     </style>
 </resources>

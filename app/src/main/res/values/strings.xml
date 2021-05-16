@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Entrar para dispositívos móveis</string>
     <string name="LoginTitle">Login</string>
-    <string name="entrar">Entrarr</string>
+    <string name="entrar">Entrar</string>
+    <string name="pendencias">Pendências</string>
+    <string name="LibTodasEtapas">Liberar todas as Etapas</string>
+    <string name="Turma">Nome turma</string>
+    <string name="Etapa">Nome etapa</string>
+    <string name="Aluno">Nome aluno</string>
 </resources>

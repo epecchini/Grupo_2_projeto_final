@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.uniritter.mobile.grupo_2_projeto_final">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Grupo_2_projeto_final">
-        <activity android:name=".ListaAlunosSQLiteActivity"></activity>
+        <activity android:name=".PendenciasActivity"></activity>
+        <activity android:name=".ListaAlunosSQLiteActivity" />
         <activity android:name=".MainSQLiteActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -19,6 +26,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

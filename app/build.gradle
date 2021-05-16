@@ -5,6 +5,10 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
+    
+    dataBinding {
+        enabled true
+    }
 
     defaultConfig {
         applicationId "br.edu.uniritter.mobile.grupo_2_projeto_final"
@@ -36,4 +40,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.android.volley:volley:1.2.0'
+    compileOnly 'com.google.android.wearable:wearable:2.6.0'
 }
