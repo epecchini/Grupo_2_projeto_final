@@ -13,8 +13,11 @@ public class Aluno implements Parcelable {
     private String UF;
     private String email;
     private int tentativasAcesso;
+    private String nomeEmpresa;
+    private String inicioEstagio;
+    private String fimEstagio;
 
-    public Aluno(int id, String nome, String sobrenome, int idade, String cidade, String UF, String email, int tentativasAcesso) {
+    public Aluno(int id, String nome, String sobrenome, int idade, String cidade, String UF, String email, int tentativasAcesso, String nomeEmpresa, String inicioEstagio, String fimEstagio) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -23,6 +26,9 @@ public class Aluno implements Parcelable {
         this.UF = UF;
         this.email = email;
         this.tentativasAcesso = tentativasAcesso;
+        this.nomeEmpresa = nomeEmpresa;
+        this.inicioEstagio = inicioEstagio;
+        this.fimEstagio = fimEstagio;
     }
 
     private Aluno(Parcel p) {
@@ -34,6 +40,9 @@ public class Aluno implements Parcelable {
         this.UF = p.readString();
         this.email = p.readString();
         this.tentativasAcesso = p.readInt();
+        this.nomeEmpresa = p.readString();
+        this.inicioEstagio = p.readString();
+        this.fimEstagio = p.readString();
     }
 
     public static final Creator<Aluno> CREATOR = new Creator<Aluno>() {
@@ -63,6 +72,9 @@ public class Aluno implements Parcelable {
         parcel.writeString(this.UF);
         parcel.writeString(this.email);
         parcel.writeInt(this.tentativasAcesso);
+        parcel.writeString(this.nomeEmpresa);
+        parcel.writeString(this.inicioEstagio);
+        parcel.writeString(this.fimEstagio);
     }
 
     public int getId() {
@@ -81,6 +93,9 @@ public class Aluno implements Parcelable {
     }
     public String getEmail() { return email; }
     public int getTentativasAcesso() { return tentativasAcesso; }
+    public String getNomeEmpresa() { return nomeEmpresa; }
+    public String getInicioEstagio() { return inicioEstagio; }
+    public String getFimEstagio() { return fimEstagio; }
 
     public void setId(int id) {
         this.id = id;
@@ -104,4 +119,11 @@ public class Aluno implements Parcelable {
         this.email = email;
     }
     public void setTentativasAcesso(int tentativasAcesso) { this.tentativasAcesso = tentativasAcesso; }
+    public void setNomeEmpresa(String nomeEmpresa) { this.nomeEmpresa = nomeEmpresa; }
+    public void setInicioEstagio(String inicioEstagio) {
+        this.inicioEstagio = inicioEstagio;
+    }
+    public void setFimEstagio(String fimEstagio) {
+        this.fimEstagio = fimEstagio;
+    }
 }
