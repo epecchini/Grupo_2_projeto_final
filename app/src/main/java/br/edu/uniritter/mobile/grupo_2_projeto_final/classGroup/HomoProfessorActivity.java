@@ -10,7 +10,7 @@ public class HomoProfessorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_aluno);
+        setContentView(R.layout.activity_home_professor);
     }
 
 }
