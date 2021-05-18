@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622773229058",
+    "firebase_url": "https://cdm-grupo-eliseo-default-rtdb.firebaseio.com",
+    "project_id": "cdm-grupo-eliseo",
+    "storage_bucket": "cdm-grupo-eliseo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622773229058:android:e106965d545960dc3eb91b",
+        "android_client_info": {
+          "package_name": "br.edu.uniritter.mobile.grupo_2_projeto_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622773229058-em7hkgqmd6if0vj9cei5284c3d4oa0am.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.uniritter.mobile.grupo_2_projeto_final",
+            "certificate_hash": "50557798c70c648cdaa8641708c140cae887e860"
+          }
+        },
+        {
+          "client_id": "622773229058-ig37f4a6edbg8s64bv67oa84ag3pslvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARk8v8l3fkM0ODiHBullF47NHHvH-3Zyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622773229058-ig37f4a6edbg8s64bv67oa84ag3pslvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

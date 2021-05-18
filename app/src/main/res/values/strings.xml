@@ -7,4 +7,14 @@
     <string name="Turma">Nome turma</string>
     <string name="Etapa">Nome etapa</string>
     <string name="Aluno">Nome aluno</string>
+    <string name="app_login">Seja Bem Vindo!</string>
+    <string name="Btn_Sair">Sair</string>
+    <string name="Btn_Logout">Logout</string>
+    <string name="Cadastrar">Cadastrar</string>
+    <string name="Email">Insira seu Email</string>
+    <string name="Senha">Insira sua Senha</string>
+    <string name="Cadastrar_Email">Digite seu Email</string>
+    <string name="Cadastrar_Senha">Digite sua Senha</string>
+    <string name="Cadastrar_Nome">Digite seu Nome Completo</string>
+    <string name="Chec_Prof">Professor</string>
 </resources>
