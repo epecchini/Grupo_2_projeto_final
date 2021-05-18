@@ -18,6 +18,11 @@
         <activity android:name=".PendenciasActivity"></activity>
         <activity android:name=".ListaAlunosSQLiteActivity" />
         <activity android:name=".MainSQLiteActivity" />
+        <activity android:name=".NewLoginActivity"></activity>
+        <activity android:name=".CadastroActivity"></activity>
+        <activity android:name=".PrincipalActivity"></activity>
+        <activity android:name=".NovoCadastro"></activity>
+        <activity android:name=".DeBug"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
