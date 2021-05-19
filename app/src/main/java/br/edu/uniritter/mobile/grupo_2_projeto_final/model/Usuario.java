@@ -7,7 +7,13 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private CheckBox cbProfessor;
+    private boolean professor;
+
+    public boolean isProfessor() {return professor;}
+
+    public void setProfessor(boolean professor) {
+        this.professor = professor;
+    }
 
     public String getId() {
         return id;

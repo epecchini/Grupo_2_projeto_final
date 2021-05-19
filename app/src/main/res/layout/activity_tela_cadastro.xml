@@ -23,7 +23,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etNome" />
 
     <Button
-        android:id="@+id/btLogar"
+        android:id="@+id/btCadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

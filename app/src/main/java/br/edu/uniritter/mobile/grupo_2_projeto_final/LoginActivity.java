@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primeira);
 
-        btLogar = findViewById(R.id.btLogar);
+        btLogar = findViewById(R.id.btCadastrar);
         btCadastrar = findViewById(R.id.btCadastro);
         
         btLogar.setOnClickListener(new View.OnClickListener() {

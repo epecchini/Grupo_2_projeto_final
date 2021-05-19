@@ -34,7 +34,7 @@ public class NewLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.email);
         etSenha = findViewById(R.id.etSenha);
-        btLogar = findViewById(R.id.btLogar);
+        btLogar = findViewById(R.id.btCadastrar);
 
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -40,7 +40,7 @@ public class NovoCadastro extends AppCompatActivity {
         etEmail = findViewById(R.id.email);
         etSenha = findViewById(R.id.etSenha);
         cbProfessor = findViewById(R.id.cbProfessor);
-        btCadastro = findViewById(R.id.btLogar);
+        btCadastro = findViewById(R.id.btCadastrar);
         mAuth = FirebaseAuth.getInstance();
 
         btCadastro.setOnClickListener(new View.OnClickListener() {
