@@ -1,11 +1,19 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
+import android.widget.CheckBox;
+
 public class Usuario {
     private String id;
     private String nome;
     private String email;
     private String senha;
     private boolean professor;
+
+    public boolean isProfessor() {return professor;}
+
+    public void setProfessor(boolean professor) {
+        this.professor = professor;
+    }
 
     public String getId() {
         return id;
@@ -39,11 +47,9 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public boolean isProfessor() {
-        return professor;
-    }
 
-    public void setProfessor(boolean professor) {
-        this.professor = professor;
+
+    public void salvarDados() {
+        //Aqui será usado para salvar os daddos no DataBase
     }
 }
