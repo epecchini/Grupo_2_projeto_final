@@ -59,9 +59,10 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     FirebaseUser user = mAuth.getCurrentUser();
-                    //u.setId(user.getUid());
+                    u.setId(user.getUid());
                     u.salvarDados();
-                    startActivity(new Intent(CadastroActivity.this, PrincipalActivity.class));
+                    Toast.makeText(CadastroActivity.this, "Cadastro criado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(CadastroActivity.this, LoginActivity.class));
                 }else{
                     Toast.makeText(CadastroActivity.this, "Erro ao criar o Login", Toast.LENGTH_SHORT).show();
                 }
@@ -73,14 +74,6 @@ public class CadastroActivity extends AppCompatActivity {
         if(etNome.getText().toString().equals("") || etEmail.getText().toString().equals("") || etSenha.getText().toString().equals("")){
             Toast.makeText(this, "Você deve preencher todos os dados", Toast.LENGTH_LONG).show();
         }else{
-            u = new Usuario();
-            /**
-            u.setNome("a");
-            u.setEmail("b@b.com");
-            u.setSenha("1234"); **/
-
-
-
             u = new Usuario();
             u.setNome(etNome.getText().toString());
             u.setEmail(etEmail.getText().toString());
