@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 
-public class HomoProfessorActivity extends AppCompatActivity {
+public class HomeProfessorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
