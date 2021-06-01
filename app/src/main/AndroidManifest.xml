@@ -19,6 +19,7 @@
         <activity android:name=".ListaAlunosSQLiteActivity" />
         <activity android:name=".MainSQLiteActivity" />
         <activity android:name=".CadastroActivity"></activity>
+        <activity android:name=".HomeAlunoActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".DeBug"></activity>
         <activity android:name=".SplashActivity">
