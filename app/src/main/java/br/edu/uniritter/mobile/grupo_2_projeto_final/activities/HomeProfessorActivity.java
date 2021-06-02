@@ -2,6 +2,8 @@ package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +37,12 @@ public class HomeProfessorActivity extends AppCompatActivity
         bindTurma(list);*/
 
         bindTurma(FonteDados.getTurma_list());
+    }
+
+    public void onClickTurmaProf(View view){
+
+       
+
     }
 
     @Override

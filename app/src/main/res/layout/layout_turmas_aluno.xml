@@ -33,7 +33,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:checked="@{clsTurma.cadastrado}" />
+            android:checked="@{clsTurma.cadastrado}"
+            android:clickable="false" />
 
         <ImageButton
             android:id="@+id/imageButton"

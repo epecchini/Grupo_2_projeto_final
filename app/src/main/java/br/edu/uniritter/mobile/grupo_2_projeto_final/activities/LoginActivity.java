@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
         Query query;
-        query = firebaseFirestore.collection("turmaAluno").limit(100);
+        query = firebaseFirestore.collection("turmaAluno").whereEqualTo("idAluno","001").limit(100);
         query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
