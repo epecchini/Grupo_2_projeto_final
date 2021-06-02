@@ -1,5 +1,6 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,4 +28,6 @@ public class FonteDados {
     }
 
     public static ClsTurmaAluno getTurmaAluno(String id) { return turmasAlunos.get(id); }
+
+    public static ArrayList getTurma_list() { return new ArrayList(turmas.values()); }
 }

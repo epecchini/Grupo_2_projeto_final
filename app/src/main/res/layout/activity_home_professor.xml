@@ -6,70 +6,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInfoGeral"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btEtapas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/bemVindoTitle"
-        android:layout_width="171dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="632dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="top"
         android:text="Bem Vindo!"
         android:textAppearance="@style/loginTitle"
         android:textColor="#00AEE5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TurmaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/turmaCad"
+        android:textColor="#0C0C0C"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/bemVindoTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bemVindoTitle"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/btEtapas"
         android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/btAlunos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/etapaspic" />
+
+    <ImageView
+        android:id="@+id/imgEtapas"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btEtapas"
+        app:layout_constraintStart_toStartOf="@+id/btEtapas"
+        app:srcCompat="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/tvEtapas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Veja as etapas ->"
+        android:textColor="@color/backActivities"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEtapas"
+        app:layout_constraintStart_toEndOf="@+id/imgEtapas"
+        app:layout_constraintTop_toTopOf="@+id/imgEtapas" />
+
+    <ImageButton
+        android:id="@+id/btAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/btPendencias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/alunospic" />
+
+    <ImageView
+        android:id="@+id/imgAlunos"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btAlunos"
+        app:layout_constraintStart_toStartOf="@+id/btAlunos"
+        app:srcCompat="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/tvAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Veja os alunos ->"
+        android:textColor="@color/backActivities"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAlunos"
+        app:layout_constraintStart_toEndOf="@+id/imgAlunos"
+        app:layout_constraintTop_toTopOf="@+id/imgAlunos" />
+
+    <ImageButton
+        android:id="@+id/btPendencias"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
-        app:srcCompat="@drawable/ic_frame_13" />
+        app:srcCompat="@drawable/pendenciaspic" />
+
+    <ImageView
+        android:id="@+id/imgPendencias"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btPendencias"
+        app:layout_constraintStart_toStartOf="@+id/btPendencias"
+        app:srcCompat="@drawable/splash" />
 
     <TextView
-        android:id="@+id/EtapasTitle"
+        android:id="@+id/tvPendencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Etapas"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="446dp" />
-
-    <TextView
-        android:id="@+id/TurmaTitle"
-        android:layout_width="205dp"
-        android:layout_height="32dp"
-        android:text="Turma Cadastrada"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="166dp" />
-
-    <View
-        android:id="@+id/MostraTurmaCadastrada"
-        android:layout_width="328dp"
-        android:layout_height="31dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
-
+        android:layout_marginStart="8dp"
+        android:text="Veja as pendências ->"
+        android:textColor="@color/backActivities"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPendencias"
+        app:layout_constraintStart_toEndOf="@+id/imgPendencias"
+        app:layout_constraintTop_toTopOf="@+id/imgPendencias" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

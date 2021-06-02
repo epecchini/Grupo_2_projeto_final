@@ -10,40 +10,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/tvTurma"
-            android:layout_width="335dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
             android:fontFamily="@font/inder"
             android:text="@{clsTurma.nomeTurma}"
-            android:textAlignment="viewStart"
+            android:textAlignment="textStart"
             android:textAppearance="@style/subTitle01"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <CheckBox
-            android:id="@+id/cbCadastrado"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:checked="@{clsTurma.cadastrado}" />
-
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="40dp"
+            android:id="@+id/imgbtOpen"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_margin="2dp"
             android:layout_marginEnd="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/tvAluno"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tvEtapa"
             app:srcCompat="@drawable/rightarrow" />
+
+        <Switch
+            android:id="@+id/swLiberada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:checked="@{clsTurma.liberada}"
+            android:text="Turma liberada"
+            android:textAlignment="textEnd" />
+
+        <Switch
+            android:id="@+id/swEncerrada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:checked="@{clsTurma.encerrada}"
+            android:text="Turma encerrada"
+            android:textAlignment="textEnd" />
 
     </LinearLayout>
 </layout>

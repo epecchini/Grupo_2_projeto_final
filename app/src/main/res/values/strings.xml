@@ -17,4 +17,5 @@
     <string name="Cadastrar_Senha">Digite sua Senha</string>
     <string name="Cadastrar_Nome">Digite seu Nome Completo</string>
     <string name="Chec_Prof">Professor</string>
+    <string name="turmaCad">Turmas cadastradas</string>
 </resources>

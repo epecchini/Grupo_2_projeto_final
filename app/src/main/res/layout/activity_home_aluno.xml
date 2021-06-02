@@ -14,13 +14,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="top"
         android:text="Bem Vindo!"
         android:textAppearance="@style/loginTitle"
         android:textColor="#00AEE5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,23 +36,11 @@
         app:srcCompat="@drawable/etapaspic" />
 
     <TextView
-        android:id="@+id/EtapasTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Etapas"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btEtapas"
-        app:layout_constraintStart_toStartOf="@+id/btEtapas"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/TurmaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Turmas cadastrada"
+        android:layout_marginTop="8dp"
+        android:text="@string/turmaCad"
         android:textColor="#0C0C0C"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/bemVindoTitle"
@@ -89,20 +76,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/EtapasTitle"
+        app:layout_constraintBottom_toTopOf="@+id/btEtapas"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/refreshimage" />
+        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

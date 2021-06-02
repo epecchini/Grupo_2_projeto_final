@@ -11,37 +11,38 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptTurmaAluno;
-import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntTurmaAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptHomeProf;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntHomeProf;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 
-public class HomeAlunoActivity extends AppCompatActivity
-        implements IntTurmaAluno.intTurmAlunoPresView {
+public class HomeProfessorActivity extends AppCompatActivity
+        implements IntHomeProf.intHomeProfPresView {
 
-    private IntTurmaAluno.intTurmAlunoPres presenter;
+    private IntHomeProf.intHomeProfPres presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_aluno);
+        setContentView(R.layout.activity_home_professor);
 
-        List<ClsTurma> list = new ArrayList<>();
+        /*List<ClsTurma> list = new ArrayList<>();
 
         for (String key : FonteDados.getTurma_map().keySet()) {
-            if(FonteDados.getTurma(key).isLiberada() && !FonteDados.getTurma(key).isEncerrada()) list.add(FonteDados.getTurma(key));
+            list.add(FonteDados.getTurma(key));
         }
+        bindTurma(list);*/
 
-        bindTurmaAluno(list);
+        bindTurma(FonteDados.getTurma_list());
     }
 
     @Override
-    public void bindTurmaAluno(List<ClsTurma> list) {
+    public void bindTurma(List<ClsTurma> list) {
         RecyclerView rv = findViewById(R.id.rvInfoGeral);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         //
         rv.setLayoutManager(llm);
-        AdaptTurmaAluno cls = new AdaptTurmaAluno(list);
+        AdaptHomeProf cls = new AdaptHomeProf(list);
         rv.setAdapter(cls);
     }
 

@@ -23,6 +23,11 @@ public class DeBug extends AppCompatActivity {
         setContentView(R.layout.activity_debug);
     }
 
+    public void telaHomeProfessor(View view) {
+        Intent intent = new Intent(this, HomeProfessorActivity.class);
+        startActivity(intent);
+    }
+
     public void telaHomeAluno(View view) {
 
       /*  List<ClsTurmaAluno> list = new ArrayList<>();
