@@ -20,8 +20,8 @@ public class Turma implements Parcelable {
     private Turma(Parcel p) {
         this.id = p.readInt();
         this.nome = p.readString();
-        this.liberada = p.readBoolean();
-        this.encerrada = p.readBoolean();
+       // this.liberada = p.readBoolean();
+       // this.encerrada = p.readBoolean();
     }
 
     public static final Creator<Turma> CREATOR = new Creator<Turma>() {
@@ -45,8 +45,8 @@ public class Turma implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.id);
         parcel.writeString(this.nome);
-        parcel.writeBoolean(this.liberada);
-        parcel.writeBoolean(this.encerrada);
+       // parcel.writeBoolean(this.liberada);
+      //  parcel.writeBoolean(this.encerrada);
     }
 
     public int getId() {

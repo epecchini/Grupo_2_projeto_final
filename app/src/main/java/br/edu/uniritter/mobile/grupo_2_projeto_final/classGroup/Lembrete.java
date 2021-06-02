@@ -21,7 +21,7 @@ public class Lembrete implements Parcelable {
         this.id = p.readInt();
         this.texto = p.readString();
         this.dias = p.readInt();
-        this.modificavel = p.readBoolean();
+      //  this.modificavel = p.readBoolean();
     }
 
     public static final Creator<Lembrete> CREATOR = new Creator<Lembrete>() {
@@ -46,7 +46,7 @@ public class Lembrete implements Parcelable {
         parcel.writeInt(this.id);
         parcel.writeString(this.texto);
         parcel.writeInt(this.dias);
-        parcel.writeBoolean(this.modificavel);
+      //  parcel.writeBoolean(this.modificavel);
     }
 
     public int getId() {

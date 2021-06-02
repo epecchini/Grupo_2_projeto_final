@@ -36,8 +36,8 @@ public class EtapaAluno implements Parcelable {
         this.id = p.readInt();
         this.idEtapa = p.readInt();
         this.idAluno = p.readInt();
-        this.liberada = p.readBoolean();
-        this.entregada = p.readBoolean();
+     //   this.liberada = p.readBoolean();
+      //  this.entregada = p.readBoolean();
         this.dataEntrega = p.readString();
         this.status = p.readInt();
         this.dataModificacaoStatus = p.readString();
@@ -68,8 +68,8 @@ public class EtapaAluno implements Parcelable {
         parcel.writeInt(this.id);
         parcel.writeInt(this.idEtapa);
         parcel.writeInt(this.idAluno);
-        parcel.writeBoolean(this.liberada);
-        parcel.writeBoolean(this.entregada);
+     //   parcel.writeBoolean(this.liberada);
+     //   parcel.writeBoolean(this.entregada);
         parcel.writeString(this.dataEntrega);
         parcel.writeInt(this.status);
         parcel.writeString(this.dataModificacaoStatus);

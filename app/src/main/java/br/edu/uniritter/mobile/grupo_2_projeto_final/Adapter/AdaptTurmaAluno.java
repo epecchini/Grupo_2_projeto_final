@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.databinding.LayoutTurmasAlunoBinding;
-import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 
 public class AdaptTurmaAluno extends RecyclerView.Adapter<AdaptTurmaAluno.ViewHolder> {
-    private List<ClsTurmaAluno> list;
+    private List<ClsTurma> list;
 
-    public AdaptTurmaAluno(List<ClsTurmaAluno> list) { this.list = list; }
+    public AdaptTurmaAluno(List<ClsTurma> list) { this.list = list; }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         LayoutTurmasAlunoBinding bindind;
@@ -34,7 +34,7 @@ public class AdaptTurmaAluno extends RecyclerView.Adapter<AdaptTurmaAluno.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) { holder.bindind.setClsTurmaAluno(list.get(position)); }
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) { holder.bindind.setClsTurma(list.get(position)); }
 
     @Override
     public int getItemCount() { return this.list.size(); }

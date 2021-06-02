@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -14,9 +15,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.Usuario;
 import android.os.Bundle;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,12 +55,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     private void logar() {
         mAuth.signInWithEmailAndPassword(u.getEmail(), u.getSenha())
                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            getAllInfo();
                             // Sign in success, update UI with the signed-in user's information -> peguei esse codigo da doc do FireBase
                             FirebaseUser user = mAuth.getCurrentUser();
                             startActivity(new Intent(LoginActivity.this, DeBug.class));
@@ -62,10 +75,83 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
     private void receberDados() {
         u = new Usuario();
         u.setEmail(etEmail.getText().toString());
         u.setSenha(etSenha.getText().toString());
     }
 
+    private void getAllInfo(){
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+
+        Query query;
+        query = firebaseFirestore.collection("turmaAluno").limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<ClsTurmaAluno> list = value.toObjects(ClsTurmaAluno.class);
+                for(ClsTurmaAluno obj: list){
+                    FonteDados.putTurmaAluno(obj);
+                }
+            }
+        });
+
+        query = firebaseFirestore.collection("turma").limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<ClsTurma> list = value.toObjects(ClsTurma.class);
+                for(ClsTurma obj: list){
+                    try { obj.setCadastrado(FonteDados.getTurmaAluno(obj.getId()).getId() != null); } catch (NullPointerException ex) { }
+                    FonteDados.putTurma(obj);
+                }
+            }
+        });
+
+       /* query = firebaseFirestore.collection("turmaAluno").limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<ClsTurmaAluno> list = value.toObjects(ClsTurmaAluno.class);
+                for(ClsTurmaAluno obj: list){
+
+
+                    // obj.getId()
+                    try{
+                        // obj.setNomeTurma(FonteDados.getTurma(obj.getIdTurma()).getNome());  // ajustar
+                        obj.setTurma(FonteDados.getTurma(obj.getIdTurma()));
+                    }
+                    catch (NullPointerException ex) {
+                        //message
+
+                    }
+
+
+
+                    //FonteDados.putTurma(obj);
+                }
+
+                // bindTurmaAluno(value.toObjects(ClsTurmaAluno.class));
+            }
+        });
+
+        query = firebaseFirestore.collection("Usuario").limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                List<Usuario> list = value.toObjects(Usuario.class);
+                for(Usuario obj: list){
+
+
+                    FonteDados.putUsuario(obj);
+
+
+                }
+
+                // bindTurmaAluno(value.toObjects(ClsTurmaAluno.class));
+            }
+        });*/
+    }
 }

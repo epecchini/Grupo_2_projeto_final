@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="clsTurmaAluno"
-            type="br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno" />
+            name="clsTurma"
+            type="br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma" />
     </data>
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
             android:fontFamily="@font/inder"
-            android:text="@{clsTurmaAluno.nomeTurma}"
+            android:text="@{clsTurma.nomeTurma}"
             android:textAppearance="@style/subTitle01"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,8 @@
             android:id="@+id/cbCadastrado"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:checked="@{clsTurma.cadastrado}" />
 
         <ImageButton
             android:id="@+id/imageButton"
