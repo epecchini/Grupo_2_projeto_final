@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.edu.uniritter.mobile.grupo_2_projeto_final.CadastroActivity;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -16,6 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.HomeAlunoActivity;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.HomeProfessorActivity;
+
 public class DeBug extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {

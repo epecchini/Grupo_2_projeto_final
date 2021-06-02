@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.jetbrains.annotations.NotNull;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.LoginActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -35,7 +36,6 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
-
 
         etNome = findViewById(R.id.etNome);
         etEmail = findViewById(R.id.etEmail);
@@ -83,11 +83,6 @@ public class CadastroActivity extends AppCompatActivity {
             }else{
                 u.setProfessor(false);
             }
-
-
         }
-
     }
-
-
 }

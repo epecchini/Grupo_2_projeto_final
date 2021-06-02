@@ -22,32 +22,25 @@ public class ClsTurma {
         this.encerrada = encerrada;
     }
 
-    public boolean isCadastrado() { return cadastrado; }
-
-    public void setCadastrado(boolean cadastrado) { this.cadastrado = cadastrado; }
-
     public String getId() {
         return id;
     }
-
+    public boolean isCadastrado() { return cadastrado; }
     public String getNomeTurma() {
         return nomeTurma;
     }
-
-    public void setNomeTurma(String nomeTurma) { this.nomeTurma = nomeTurma; }
-
     public boolean isLiberada() {
         return liberada;
     }
-
-    public void setLiberada(boolean liberada) {
-        this.liberada = liberada;
-    }
-
     public boolean isEncerrada() {
         return encerrada;
     }
 
+    public void setCadastrado(boolean cadastrado) { this.cadastrado = cadastrado; }
+    public void setNomeTurma(String nomeTurma) { this.nomeTurma = nomeTurma; }
+    public void setLiberada(boolean liberada) {
+        this.liberada = liberada;
+    }
     public void setEncerrada(boolean encerrada) {
         this.encerrada = encerrada;
     }

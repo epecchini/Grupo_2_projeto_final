@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import java.util.List;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptHomeProf;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntHomeProf;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 

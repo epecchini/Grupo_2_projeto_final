@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 import android.content.Intent;
 
 import android.view.View;
@@ -21,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.DeBug;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
@@ -65,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                             getAllInfo();
                             // Sign in success, update UI with the signed-in user's information -> peguei esse codigo da doc do FireBase
                             FirebaseUser user = mAuth.getCurrentUser();
+
+
                             startActivity(new Intent(LoginActivity.this, DeBug.class));
                         } else {
                             // If sign in fails, display a message to the user.-> peguei esse codigo da doc do FireBase
@@ -80,6 +85,15 @@ public class LoginActivity extends AppCompatActivity {
         u = new Usuario();
         u.setEmail(etEmail.getText().toString());
         u.setSenha(etSenha.getText().toString());
+    }
+
+    private void criarAluno(){
+        ClsAluno aluno = new ClsAluno();
+
+        aluno.setEmail(etEmail.getText().toString());
+        aluno.setSenha(etSenha.getText().toString());
+
+        FonteDados.putAluno(aluno);
     }
 
     private void getAllInfo(){

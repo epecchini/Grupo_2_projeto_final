@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import java.util.List;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntTurmaAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 
@@ -28,8 +29,8 @@ public class HomeAlunoActivity extends AppCompatActivity
 
         List<ClsTurma> list = new ArrayList<>();
 
-        for (String key : FonteDados.getTurma_map().keySet()) {
-            if(FonteDados.getTurma(key).isLiberada() && !FonteDados.getTurma(key).isEncerrada()) list.add(FonteDados.getTurma(key));
+        for (ClsTurma obj : FonteDados.getTurma_list()) {
+            if(obj.isLiberada() && !obj.isEncerrada()) list.add(obj);
         }
 
         bindTurmaAluno(list);

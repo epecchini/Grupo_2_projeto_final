@@ -1,10 +1,13 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

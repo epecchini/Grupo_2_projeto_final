@@ -1,10 +1,8 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
-import android.widget.CheckBox;
-
 import com.google.firebase.database.DatabaseReference;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.ConfiguracaoFirebaseDB;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.services.ConfiguracaoFirebaseDB;
 
 public class Usuario {
     private String id;

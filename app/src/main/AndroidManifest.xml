@@ -19,18 +19,18 @@
         <activity android:name=".ListaAlunosSQLiteActivity" />
         <activity android:name=".MainSQLiteActivity" />
         <activity android:name=".CadastroActivity"></activity>
-        <activity android:name=".HomeAlunoActivity"></activity>
-        <activity android:name=".HomeProfessorActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".activities.HomeAlunoActivity"></activity>
+        <activity android:name=".activities.HomeProfessorActivity"></activity>
+        <activity android:name=".activities.LoginActivity"></activity>
         <activity android:name=".DeBug"></activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

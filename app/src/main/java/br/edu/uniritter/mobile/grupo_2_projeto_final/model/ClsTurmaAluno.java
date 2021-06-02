@@ -22,11 +22,9 @@ public class ClsTurmaAluno {
     public String getId() {
         return id;
     }
-
     public String getIdTurma() {
         return idTurma;
     }
-
     public String getIdAluno() {
         return idAluno;
     }
