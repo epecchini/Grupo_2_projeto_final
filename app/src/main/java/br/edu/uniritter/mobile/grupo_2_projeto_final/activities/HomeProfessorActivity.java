@@ -39,11 +39,7 @@ public class HomeProfessorActivity extends AppCompatActivity
         bindTurma(FonteDados.getTurma_list());
     }
 
-    public void onClickTurmaProf(View view){
 
-       
-
-    }
 
     @Override
     public void bindTurma(List<ClsTurma> list) {

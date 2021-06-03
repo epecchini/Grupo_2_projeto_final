@@ -24,6 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.DeBug;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
@@ -97,10 +98,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void getAllInfo(){
+
+
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
         Query query;
-        query = firebaseFirestore.collection("turmaAluno").whereEqualTo("idAluno","001").limit(100);
+        query = firebaseFirestore.collection("turmaAluno").whereEqualTo("idAluno",FonteDados.iduser).limit(100);
         query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -118,7 +121,19 @@ public class LoginActivity extends AppCompatActivity {
                 List<ClsTurma> list = value.toObjects(ClsTurma.class);
                 for(ClsTurma obj: list){
                     try { obj.setCadastrado(FonteDados.getTurmaAluno(obj.getId()).getId() != null); } catch (NullPointerException ex) { }
+                    //try { obj.setCadastrado(FonteDados.getTurmaAluno(obj.getId()).getId() != null); } catch (NullPointerException ex) { }
                     FonteDados.putTurma(obj);
+                }
+            }
+        });
+
+        query = firebaseFirestore.collection("etapaAluno").whereEqualTo("idAluno",FonteDados.iduser).limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<ClsEtapaAluno> list = value.toObjects(ClsEtapaAluno.class);
+                for(ClsEtapaAluno obj: list){
+                    FonteDados.putEtapaAluno(obj);
                 }
             }
         });

@@ -1,6 +1,8 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.CadastroActivity;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.EtapasAlunoActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.databinding.LayoutTurmasAlunoBinding;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 
@@ -34,7 +38,18 @@ public class AdaptTurmaAluno extends RecyclerView.Adapter<AdaptTurmaAluno.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) { holder.bindind.setClsTurma(list.get(position)); }
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.bindind.setClsTurma(list.get(position));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), EtapasAlunoActivity.class);
+                intent.putExtra("idTurma", holder.bindind.getClsTurma().getId());
+                view.getContext().startActivity(intent);
+            }
+        });
+    }
 
     @Override
     public int getItemCount() { return this.list.size(); }

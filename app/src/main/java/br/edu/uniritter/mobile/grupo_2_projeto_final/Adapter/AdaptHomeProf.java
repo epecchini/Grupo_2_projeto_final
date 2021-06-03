@@ -1,13 +1,17 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.CadastroActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.databinding.LayoutTurmasBinding;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 
@@ -34,7 +38,16 @@ public class AdaptHomeProf extends RecyclerView.Adapter<AdaptHomeProf.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) { holder.bindind.setClsTurma(list.get(position)); }
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.bindind.setClsTurma(list.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(view.getContext(), CadastroActivity.class);
+                view.getContext().startActivity(Intent);
+            }
+        });
+    }
 
     @Override
     public int getItemCount() { return this.list.size(); }

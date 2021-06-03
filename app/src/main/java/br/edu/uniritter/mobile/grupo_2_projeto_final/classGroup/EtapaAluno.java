@@ -8,8 +8,8 @@ public class EtapaAluno implements Parcelable {
     private int id;
     private int idEtapa;
     private int idAluno;
-    private boolean liberada;
     private boolean entregada;
+    private boolean liberada;
     private String dataEntrega;
     private int status;
     private String dataModificacaoStatus;

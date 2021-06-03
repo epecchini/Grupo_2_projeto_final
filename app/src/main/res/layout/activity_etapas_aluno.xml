@@ -2,184 +2,267 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Termo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.EtapasAlunoActivity">
 
     <ImageButton
         android:id="@+id/ibBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:background="?attr/actionModeCloseDrawable"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintBottom_toBottomOf="@+id/EtapasTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toTopOf="@+id/EtapasTitle" />
 
     <TextView
         android:id="@+id/EtapasTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Etapas"
         android:textColor="#00AEE5"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBoxTermo"
+        android:id="@+id/cbTermo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Termo"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintTop_toBottomOf="@+id/EtapasTitle" />
 
     <CheckBox
-        android:id="@+id/checkBoxProjeto"
+        android:id="@+id/cbProjeto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Projeto"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintStart_toStartOf="@+id/cbTermo"
+        app:layout_constraintTop_toBottomOf="@+id/cbTermo" />
 
     <CheckBox
-        android:id="@+id/checkBoxEtapa1"
+        android:id="@+id/cbEtapa1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Etapa 1"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintStart_toStartOf="@+id/cbProjeto"
+        app:layout_constraintTop_toBottomOf="@+id/cbProjeto" />
 
     <CheckBox
-        android:id="@+id/checkBoxEtapa2"
+        android:id="@+id/cbEtapa2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Etapa 2"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa1"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa1" />
 
     <CheckBox
-        android:id="@+id/checkBoxEtapa3"
+        android:id="@+id/cbEtapa3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Etapa 3"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa2"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa2" />
 
     <CheckBox
-        android:id="@+id/checkBoxEtapa4"
+        android:id="@+id/cbFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Etapa Final"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa3"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa3" />
 
     <ImageButton
         android:id="@+id/btProjeto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
+        app:layout_constraintBottom_toBottomOf="@+id/cbProjeto"
+        app:layout_constraintEnd_toEndOf="@+id/btTermo"
+        app:layout_constraintTop_toTopOf="@+id/cbProjeto"
         app:srcCompat="@drawable/rightarrow" />
 
     <ImageButton
         android:id="@+id/btEtapa1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa1"
+        app:layout_constraintEnd_toEndOf="@+id/btProjeto"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa1"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <ImageButton
+        android:id="@+id/btAceiteEtapa1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa1"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa1"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <ImageButton
+        android:id="@+id/btAceiteEtapa2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa2"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa2"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <ImageButton
+        android:id="@+id/btAceiteEtapa3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa3"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa3"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <ImageButton
+        android:id="@+id/btAceiteFinal"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/btFinal"
+        app:layout_constraintTop_toBottomOf="@+id/btFinal"
         app:srcCompat="@drawable/rightarrow" />
 
     <ImageButton
         android:id="@+id/btEtapa2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa2"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa1"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa2"
         app:srcCompat="@drawable/rightarrow" />
 
     <ImageButton
         android:id="@+id/btEtapa3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa3"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa2"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa2"
         app:srcCompat="@drawable/rightarrow" />
 
     <ImageButton
-        android:id="@+id/btEtapaFinal"
+        android:id="@+id/btFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516"
+        app:layout_constraintBottom_toBottomOf="@+id/cbFinal"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa3"
+        app:layout_constraintTop_toTopOf="@+id/cbFinal"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rightarrow" />
 
     <ImageButton
         android:id="@+id/btTermo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbTermo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cbTermo"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/adviseText"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182"
-        app:srcCompat="@drawable/rightarrow" />
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteFinal" />
+
+    <Switch
+        android:id="@+id/swEtapa1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        android:clickable="false"
+        android:text="Aceite do professor"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/btAceiteEtapa1"
+        app:layout_constraintEnd_toStartOf="@+id/btAceiteEtapa1"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa1"
+        app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa1" />
+
+    <Switch
+        android:id="@+id/swEtapa2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        android:clickable="false"
+        android:text="Aceite do professor"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/btAceiteEtapa2"
+        app:layout_constraintEnd_toStartOf="@+id/btAceiteEtapa2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa2"
+        app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa2" />
+
+    <Switch
+        android:id="@+id/swEtapa3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        android:clickable="false"
+        android:text="Aceite do professor"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/btAceiteEtapa3"
+        app:layout_constraintEnd_toStartOf="@+id/btAceiteEtapa3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa3"
+        app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa3" />
+
+    <Switch
+        android:id="@+id/swFinal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        android:clickable="false"
+        android:text="Aceite do professor"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/btAceiteFinal"
+        app:layout_constraintEnd_toStartOf="@+id/btAceiteFinal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cbFinal"
+        app:layout_constraintTop_toTopOf="@+id/btAceiteFinal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
