@@ -29,6 +29,8 @@ import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.Usuario;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
+
 import android.os.Bundle;
 
 import java.util.List;
@@ -98,9 +100,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void getAllInfo(){
-
-
-        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        FirebaseFirestore firebaseFirestore = FirebaseServices.getFirebaseFirestoreInstance();
 
         Query query;
         query = firebaseFirestore.collection("turmaAluno").whereEqualTo("idAluno",FonteDados.iduser).limit(100);

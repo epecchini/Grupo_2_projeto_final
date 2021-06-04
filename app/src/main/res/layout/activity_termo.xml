@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btAceitarTermos"
+        android:id="@+id/btAceitarEtapa"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/termoProjetoTitle"
+        android:id="@+id/tvSubTitle"
         android:layout_width="205dp"
         android:layout_height="32dp"
         android:text="Termos do Projeto"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.052" />
 
     <TextView
-        android:id="@+id/termoTitle"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Termo"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <TextView
-        android:id="@+id/Termos"
+        android:id="@+id/tvTextoEtapa"
         android:layout_width="361dp"
         android:layout_height="461dp"
         tools:layout_editor_absoluteX="24dp"

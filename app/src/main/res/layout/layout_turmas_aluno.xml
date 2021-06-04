@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/tvTurma"
-            android:layout_width="335dp"
+            android:layout_width="375dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
@@ -31,20 +31,10 @@
         <CheckBox
             android:id="@+id/cbCadastrado"
             android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:checked="@{clsTurma.cadastrado}"
             android:clickable="false" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvAluno"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvEtapa"
-            app:srcCompat="@drawable/rightarrow" />
 
     </LinearLayout>
 </layout>

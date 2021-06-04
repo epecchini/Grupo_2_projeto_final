@@ -45,4 +45,15 @@ public class FonteDados {
     public static ArrayList<ClsTurma> getTurma_list() { return new ArrayList<ClsTurma>(turmas.values()); }
 
     public static ArrayList<ClsEtapaAluno> getEtapaAluno_list() { return new ArrayList<ClsEtapaAluno>(etapasAluno.values()); }
+
+    public static String getIdEtapaAluno(String idTurma, Integer idEtapa){
+        String res = "";
+        for (ClsEtapaAluno obj : FonteDados.getEtapaAluno_list()) {
+            if(obj.getIdTurma().equals(idTurma) && obj.getIdAluno().equals(FonteDados.iduser) && obj.getIdEtapa() == idEtapa){
+                res= obj.getId();
+                break;
+            }
+        }
+        return res;
+    }
 }

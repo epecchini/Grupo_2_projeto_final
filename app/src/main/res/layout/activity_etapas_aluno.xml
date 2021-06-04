@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onClickIbBack"
         app:layout_constraintBottom_toBottomOf="@+id/EtapasTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/EtapasTitle" />
@@ -31,180 +32,76 @@
 
     <CheckBox
         android:id="@+id/cbTermo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="24dp"
         android:clickable="false"
-        android:text="Texto não encontrado!"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ibBack"
         app:layout_constraintTop_toBottomOf="@+id/EtapasTitle" />
+
+    <TextView
+        android:id="@+id/tvTermo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbTermo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbTermo"
+        app:layout_constraintTop_toTopOf="@+id/cbTermo" />
 
     <CheckBox
         android:id="@+id/cbProjeto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="8dp"
         android:clickable="false"
-        android:text="Texto não encontrado!"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/cbTermo"
         app:layout_constraintTop_toBottomOf="@+id/cbTermo" />
 
+    <TextView
+        android:id="@+id/tvProjeto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbProjeto"
+        app:layout_constraintEnd_toEndOf="@+id/tvTermo"
+        app:layout_constraintStart_toEndOf="@+id/cbProjeto"
+        app:layout_constraintTop_toTopOf="@+id/cbProjeto" />
+
     <CheckBox
         android:id="@+id/cbEtapa1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="8dp"
         android:clickable="false"
-        android:text="Texto não encontrado!"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/cbProjeto"
         app:layout_constraintTop_toBottomOf="@+id/cbProjeto" />
 
-    <CheckBox
-        android:id="@+id/cbEtapa2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="false"
-        android:text="Texto não encontrado!"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/cbEtapa1"
-        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa1" />
-
-    <CheckBox
-        android:id="@+id/cbEtapa3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="false"
-        android:text="Texto não encontrado!"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/cbEtapa2"
-        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa2" />
-
-    <CheckBox
-        android:id="@+id/cbFinal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="false"
-        android:text="Texto não encontrado!"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/cbEtapa3"
-        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa3" />
-
-    <ImageButton
-        android:id="@+id/btProjeto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cbProjeto"
-        app:layout_constraintEnd_toEndOf="@+id/btTermo"
-        app:layout_constraintTop_toTopOf="@+id/cbProjeto"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btEtapa1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa1"
-        app:layout_constraintEnd_toEndOf="@+id/btProjeto"
-        app:layout_constraintTop_toTopOf="@+id/cbEtapa1"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btAceiteEtapa1"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/btEtapa1"
-        app:layout_constraintTop_toBottomOf="@+id/btEtapa1"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btAceiteEtapa2"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/btEtapa2"
-        app:layout_constraintTop_toBottomOf="@+id/btEtapa2"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btAceiteEtapa3"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/btEtapa3"
-        app:layout_constraintTop_toBottomOf="@+id/btEtapa3"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btAceiteFinal"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/btFinal"
-        app:layout_constraintTop_toBottomOf="@+id/btFinal"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btEtapa2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa2"
-        app:layout_constraintEnd_toEndOf="@+id/btEtapa1"
-        app:layout_constraintTop_toTopOf="@+id/cbEtapa2"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btEtapa3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa3"
-        app:layout_constraintEnd_toEndOf="@+id/btEtapa2"
-        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa2"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btFinal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cbFinal"
-        app:layout_constraintEnd_toEndOf="@+id/btEtapa3"
-        app:layout_constraintTop_toTopOf="@+id/cbFinal"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/rightarrow" />
-
-    <ImageButton
-        android:id="@+id/btTermo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cbTermo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cbTermo"
-        app:srcCompat="@drawable/rightarrow" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvEtapa1"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/adviseText"
-        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btAceiteFinal" />
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa1"
+        app:layout_constraintEnd_toEndOf="@+id/tvProjeto"
+        app:layout_constraintStart_toEndOf="@+id/cbEtapa1"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa1" />
 
     <Switch
         android:id="@+id/swEtapa1"
@@ -219,6 +116,43 @@
         app:layout_constraintEnd_toStartOf="@+id/btAceiteEtapa1"
         app:layout_constraintStart_toStartOf="@+id/cbEtapa1"
         app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa1" />
+
+    <ImageButton
+        android:id="@+id/btAceiteEtapa1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="onClickObsProf"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa1"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa1"
+        app:srcCompat="@drawable/downarrowimage"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/cbEtapa2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa1"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa1" />
+
+    <TextView
+        android:id="@+id/tvEtapa2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa2"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa1"
+        app:layout_constraintStart_toEndOf="@+id/cbEtapa2"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa2" />
 
     <Switch
         android:id="@+id/swEtapa2"
@@ -235,6 +169,43 @@
         app:layout_constraintStart_toStartOf="@+id/cbEtapa2"
         app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa2" />
 
+    <ImageButton
+        android:id="@+id/btAceiteEtapa2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="onClickObsProf"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa2"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa2"
+        app:srcCompat="@drawable/downarrowimage"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/cbEtapa3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa2"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa2" />
+
+    <TextView
+        android:id="@+id/tvEtapa3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa3"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa2"
+        app:layout_constraintStart_toEndOf="@+id/cbEtapa3"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa3" />
+
     <Switch
         android:id="@+id/swEtapa3"
         android:layout_width="0dp"
@@ -250,6 +221,43 @@
         app:layout_constraintStart_toStartOf="@+id/cbEtapa3"
         app:layout_constraintTop_toTopOf="@+id/btAceiteEtapa3" />
 
+    <ImageButton
+        android:id="@+id/btAceiteEtapa3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="onClickObsProf"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa3"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa3"
+        app:srcCompat="@drawable/downarrowimage"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/cbFinal"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa3"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteEtapa3" />
+
+    <TextView
+        android:id="@+id/tvFinal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEtapaTitle"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbFinal"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa3"
+        app:layout_constraintStart_toEndOf="@+id/cbFinal"
+        app:layout_constraintTop_toTopOf="@+id/cbFinal" />
+
     <Switch
         android:id="@+id/swFinal"
         android:layout_width="0dp"
@@ -264,5 +272,35 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/cbFinal"
         app:layout_constraintTop_toTopOf="@+id/btAceiteFinal" />
+
+    <ImageButton
+        android:id="@+id/btAceiteFinal"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="onClickObsProf"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/tvFinal"
+        app:layout_constraintTop_toBottomOf="@+id/cbFinal"
+        app:srcCompat="@drawable/downarrowimage"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/adviseText"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btAceiteFinal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
