@@ -1,16 +1,19 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
 
 public class FonteDados {
     private static Map<String, ClsAluno> alunos = new HashMap<>();
     private static Map<String, ClsTurma> turmas = new HashMap<>();
     private static Map<String, ClsTurmaAluno> turmasAlunos = new HashMap<>();
     private static Map<String, ClsEtapaAluno> etapasAluno = new HashMap<>();
-
-    public static String iduser = "sGIjm5NgKjWjeD3JrvPI";
+    private static FirebaseAuth mAuth;
 
     public static void putAluno(ClsAluno aluno){ alunos.put(aluno.getId(), aluno); }
 
@@ -49,13 +52,17 @@ public class FonteDados {
     public static ArrayList<ClsAluno> getAluno_list() { return new ArrayList<ClsAluno>(alunos.values()); }
 
     public static String getIdEtapaAluno(String idTurma, Integer idEtapa){
+        mAuth = FirebaseServices.getFirebaseAuth();
+
         String res = "";
+
         for (ClsEtapaAluno obj : FonteDados.getEtapaAluno_list()) {
-            if(obj.getIdTurma().equals(idTurma) && obj.getIdAluno().equals(FonteDados.iduser) && obj.getIdEtapa() == idEtapa){
+            if(obj.getIdTurma().equals(idTurma) && obj.getIdAluno().equals(mAuth.getCurrentUser().getUid()) && obj.getIdEtapa() == idEtapa){
                 res= obj.getId();
                 break;
             }
         }
+
         return res;
     }
 

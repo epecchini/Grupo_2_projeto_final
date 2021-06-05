@@ -6,4 +6,273 @@
     android:layout_height="match_parent"
     tools:context=".activities.CadastroActivity">
 
+    <ImageButton
+        android:id="@+id/ibBackCadastroAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onClickIbBackCadastroAluno"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleCadastroAluno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitleCadastroAluno" />
+
+    <TextView
+        android:id="@+id/tvTitleCadastroAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Aluno"
+        android:textColor="#00AEE5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomeAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/hint_nome"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleCadastroAluno" />
+
+    <EditText
+        android:id="@+id/etSobrenomeAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/hint_sobrenome"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etNomeAluno"
+        app:layout_constraintStart_toStartOf="@+id/etNomeAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeAluno" />
+
+    <EditText
+        android:id="@+id/etEmailAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etSobrenomeAluno"
+        app:layout_constraintStart_toStartOf="@+id/etSobrenomeAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etSobrenomeAluno" />
+
+    <EditText
+        android:id="@+id/etSenhaAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/hint_senha"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailAluno"
+        app:layout_constraintStart_toStartOf="@+id/etEmailAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailAluno" />
+
+    <EditText
+        android:id="@+id/etConfirmarSenhaAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/hint_confirmarsenha"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etSenhaAluno"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etSenhaAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etSenhaAluno" />
+
+    <TextView
+        android:id="@+id/tvDataNascimentoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Data nascimento"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/etDataNascimentoAluno"
+        app:layout_constraintEnd_toStartOf="@+id/etDataNascimentoAluno"
+        app:layout_constraintStart_toStartOf="@+id/etEmailAluno"
+        app:layout_constraintTop_toTopOf="@+id/etDataNascimentoAluno" />
+
+    <EditText
+        android:id="@+id/etDataNascimentoAluno"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Data nascimento"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmarSenhaAluno" />
+
+    <EditText
+        android:id="@+id/etCidadeAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Cidade residência"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etDataNascimentoAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvDataNascimentoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etDataNascimentoAluno" />
+
+    <EditText
+        android:id="@+id/etUFaluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="UF residência"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etCidadeAluno"
+        app:layout_constraintStart_toStartOf="@+id/etCidadeAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etCidadeAluno" />
+
+    <View
+        android:id="@+id/dividerAluno1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/etUFaluno"
+        app:layout_constraintStart_toStartOf="@+id/etUFaluno"
+        app:layout_constraintTop_toBottomOf="@+id/etUFaluno" />
+
+    <TextView
+        android:id="@+id/lbNomeTurmaAtual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Turma atualmente cadastrado"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/etUFaluno"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etUFaluno"
+        app:layout_constraintTop_toBottomOf="@+id/dividerAluno1" />
+
+    <TextView
+        android:id="@+id/tvNomeTurmaAtual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Nenhuma turma cadastrada"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/lbNomeTurmaAtual"
+        app:layout_constraintStart_toStartOf="@+id/lbNomeTurmaAtual"
+        app:layout_constraintTop_toBottomOf="@+id/lbNomeTurmaAtual" />
+
+    <View
+        android:id="@+id/dividerAluno2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvNomeTurmaAtual"
+        app:layout_constraintStart_toStartOf="@+id/tvNomeTurmaAtual"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeTurmaAtual" />
+
+    <EditText
+        android:id="@+id/etNomeEmpresaAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/hint_empresa"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvNomeTurmaAtual"
+        app:layout_constraintStart_toStartOf="@+id/tvNomeTurmaAtual"
+        app:layout_constraintTop_toBottomOf="@+id/dividerAluno2" />
+
+    <TextView
+        android:id="@+id/tvInicioEstagioAluno"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Inicio estágio"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/etInicioEstagioAluno"
+        app:layout_constraintStart_toStartOf="@+id/etNomeEmpresaAluno"
+        app:layout_constraintTop_toTopOf="@+id/etInicioEstagioAluno" />
+
+    <EditText
+        android:id="@+id/etInicioEstagioAluno"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/hint_inicioestagio"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvInicioEstagioAluno"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeEmpresaAluno" />
+
+    <TextView
+        android:id="@+id/tvFimEstagioAluno"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Fim estágio"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/etFimEstagioAluno"
+        app:layout_constraintEnd_toStartOf="@+id/etFimEstagioAluno"
+        app:layout_constraintStart_toEndOf="@+id/etInicioEstagioAluno"
+        app:layout_constraintTop_toTopOf="@+id/etFimEstagioAluno" />
+
+    <EditText
+        android:id="@+id/etFimEstagioAluno"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_fimestagio"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etNomeEmpresaAluno"
+        app:layout_constraintTop_toTopOf="@+id/etInicioEstagioAluno" />
+
+    <Button
+        android:id="@+id/btConfirmarCadastroAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="onClickAccept"
+        android:text="@string/Cadastrar"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

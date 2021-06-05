@@ -24,7 +24,6 @@
         <activity android:name=".PendenciasActivity" />
         <activity android:name=".SQLite.ListaAlunosSQLiteActivity" />
         <activity android:name=".SQLite.MainSQLiteActivity" />
-        <activity android:name=".TelaCadastroActivity" />
         <activity android:name=".activities.HomeAlunoActivity" />
         <activity android:name=".activities.HomeProfessorActivity" />
         <activity android:name=".activities.LoginActivity" />

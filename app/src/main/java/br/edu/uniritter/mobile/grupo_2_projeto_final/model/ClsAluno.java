@@ -19,13 +19,14 @@ public class ClsAluno {
     private String inicioEstagio;
     private String fimEstagio;
     private String senha;
+    private Boolean eProf;
 
     public ClsAluno() {
         super();
     }
 
     public ClsAluno(String id, String idTurmaAtual, String nomeAluno, String sobrenome, String dataNasc, String cidade, String UF, String email, int tentativasAcesso, String nomeEmpresa,
-                    String inicioEstagio, String fimEstagio, String senha) {
+                    String inicioEstagio, String fimEstagio, String senha, Boolean eProf) {
         this.id = id;
         this.idTurmaAtual = idTurmaAtual;
         this.nomeAluno = nomeAluno;
@@ -39,6 +40,7 @@ public class ClsAluno {
         this.inicioEstagio = inicioEstagio;
         this.fimEstagio = fimEstagio;
         this.senha = senha;
+        this.eProf = eProf;
     }
 
     public String getId() { return id; }
@@ -54,6 +56,7 @@ public class ClsAluno {
     public String getInicioEstagio() { return inicioEstagio; }
     public String getFimEstagio() { return fimEstagio; }
     public String getSenha() { return senha; }
+    public Boolean getEprof() { return eProf; }
 
     public void setIdTurmaAtual(String idTurmaAtual) { this.idTurmaAtual = idTurmaAtual; }
     public void setNomeAluno(String nomeAluno) { this.nomeAluno = nomeAluno; }
@@ -67,4 +70,5 @@ public class ClsAluno {
     public void setInicioEstagio(String inicioEstagio) { this.inicioEstagio = inicioEstagio; }
     public void setFimEstagio(String fimEstagio) { this.fimEstagio = fimEstagio; }
     public void setSenha(String senha) { this.senha = senha; }
+    public void setEprof(Boolean senha) { this.eProf = eProf; }
 }

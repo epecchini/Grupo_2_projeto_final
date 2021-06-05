@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.TelaCadastroActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void telaCadastrar() {
-        Intent Intent = new Intent(this, TelaCadastroActivity.class);
+        Intent Intent = new Intent(this, CadastroActivity.class);
         startActivity(Intent);
 
     }

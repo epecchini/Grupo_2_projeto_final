@@ -7,7 +7,7 @@
     tools:context=".activities.EtapasActivity">
 
     <Button
-        android:id="@+id/btConfirmarEtapaCriar"
+        android:id="@+id/btConfirmarCadastroAluno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -32,22 +32,22 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleCriarProf"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleCadastroAluno"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/ibBackCriar"
+        android:id="@+id/ibBackCadastroAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="?attr/actionModeCloseDrawable"
         android:onClick="onClickIbBack"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitleCriarProf"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleCadastroAluno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvTitleCriarProf" />
+        app:layout_constraintTop_toTopOf="@+id/tvTitleCadastroAluno" />
 
     <TextView
-        android:id="@+id/tvTitleCriarProf"
+        android:id="@+id/tvTitleCadastroAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

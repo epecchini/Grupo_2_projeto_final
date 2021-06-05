@@ -1,6 +1,5 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,14 +9,12 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -33,6 +30,7 @@ import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
 
 public class EtapasActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private String idTurma;
     private Integer idEtapa;
     private String idEtapaAluno;
@@ -50,18 +48,20 @@ public class EtapasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapas);
 
+        mAuth = FirebaseServices.getFirebaseAuth();
+
         Intent it = getIntent();
         idTurma = it.getStringExtra("idTurma");
         idEtapa = it.getIntExtra("idEtapa",-1);
         idEtapaAluno = it.getStringExtra("idEtapaAluno");
 
-        tvTitle = (TextView) findViewById(R.id.tvTitleCriarProf);
+        tvTitle = (TextView) findViewById(R.id.tvTitleCadastroAluno);
         tvSubTitle = (TextView) findViewById(R.id.tvSubTitleCriar);
         tvTextoEtapa = (TextView) findViewById(R.id.tvTextoEtapa);
         tvLembrete = (TextView) findViewById(R.id.tvLembrete);
         etnLembrete = (EditText) findViewById(R.id.etnLembrete);
         swLembrete = (Switch) findViewById(R.id.swLembrete);
-        btAceitarEtapa = (Button) findViewById(R.id.btConfirmarEtapaCriar);
+        btAceitarEtapa = (Button) findViewById(R.id.btConfirmarCadastroAluno);
 
         btAceitarEtapa.setVisibility(it.getIntExtra("showBtAceite", Button.GONE));
 
@@ -76,12 +76,7 @@ public class EtapasActivity extends AppCompatActivity {
         btAceitarEtapa.setText(it.getStringExtra("btAceitarEtapa"));
         swLembrete.setChecked(it.getBooleanExtra("swLembrete",false));
 
-        swLembrete.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                saveChanges();
-            }
-        });
+        swLembrete.setOnCheckedChangeListener((buttonView, isChecked) -> saveChanges());
 
         etnLembrete.addTextChangedListener(new TextWatcher() {
             @Override
@@ -105,10 +100,10 @@ public class EtapasActivity extends AppCompatActivity {
         Integer etnLembreteValue = 0;
         try { etnLembreteValue = Integer.parseInt(etnLembrete.getText().toString()); } catch (Exception ex) {}
 
-        if(idEtapaAluno == "" || TextUtils.isEmpty(idEtapaAluno)){
+        if(idEtapaAluno.equals("") || TextUtils.isEmpty(idEtapaAluno)){
             ClsEtapaAluno obj = new ClsEtapaAluno();
 
-            obj.setIdAluno(FonteDados.iduser);
+            obj.setIdAluno(mAuth.getCurrentUser().getUid());
             obj.setIdTurma(idTurma);
             obj.setIdEtapa(idEtapa);
             obj.setStatus(0);
@@ -116,56 +111,38 @@ public class EtapasActivity extends AppCompatActivity {
             obj.setEnviarLembrete(swLembrete.isChecked() ? 1 : 0);
 
             Date c = Calendar.getInstance().getTime();
-            DateFormat df = new SimpleDateFormat("dd/MM/YYYY HH:mm");
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             obj.setDataEntrega(df.format(c));
 
             store.collection("etapaAluno").add(obj)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            idEtapaAluno = FonteDados.getIdEtapaAluno(idTurma, idEtapa);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            mostraToast("Erro no criar essa etapa!");
-                        }
-                    });
+                    .addOnSuccessListener(documentReference -> idEtapaAluno = FonteDados.getIdEtapaAluno(idTurma, idEtapa))
+                    .addOnFailureListener(e -> mostraToast("Erro no criar essa etapa!"));
         }
         else{
             DocumentReference etapaAluno = store.collection("etapaAluno").document(idEtapaAluno);
 
             etapaAluno
                     .update("lembreteDias", etnLembreteValue, "enviarLembrete", swLembrete.isChecked() ? 1 : 0)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                        }
+                    .addOnSuccessListener(aVoid -> {
                     })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            mostraToast( "Erro no gravar a modificação!");
-                        }
-                    });
+                    .addOnFailureListener(e -> mostraToast( "Erro no gravar a modificação!"));
         }
     }
 
     public void onClickAccept(View view){
         FirebaseFirestore store = FirebaseServices.getFirebaseFirestoreInstance();
 
-        if(idEtapaAluno == "" || TextUtils.isEmpty(idEtapaAluno)){
+        if(idEtapaAluno.equals("") || TextUtils.isEmpty(idEtapaAluno)){
             ClsEtapaAluno obj = new ClsEtapaAluno();
 
-            obj.setIdAluno(FonteDados.iduser);
+            obj.setIdAluno(mAuth.getCurrentUser().getUid());
             obj.setIdTurma(idTurma);
             obj.setStatus(0);
             obj.setLembreteDias(0);
             obj.setEnviarLembrete(0);
 
             Date c = Calendar.getInstance().getTime();
-            DateFormat df = new SimpleDateFormat("dd/MM/YYYY HH:mm");
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             obj.setDataEntrega(df.format(c));
 
             for(Integer i = 1; i <= 6; i++) {
@@ -173,18 +150,8 @@ public class EtapasActivity extends AppCompatActivity {
 
                 Integer finalI = i;
                 store.collection("etapaAluno").add(obj)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                mostraToast("Erro no criar a " + String.valueOf(finalI) + "ª etapa!");
-                            }
-                        });
+                        .addOnSuccessListener(documentReference -> finish())
+                        .addOnFailureListener(e -> mostraToast("Erro no criar a " + finalI + "ª etapa!"));
             }
         }
         else{
@@ -195,18 +162,8 @@ public class EtapasActivity extends AppCompatActivity {
 
             etapaAluno
                     .update("status", 1, "lembreteDias", etnLembreteValue, "enviarLembrete", swLembrete.isChecked() ? 1 : 0)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            finish();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            mostraToast( "Erro no gravar a modificação!");
-                        }
-                    });
+                    .addOnSuccessListener(aVoid -> finish())
+                    .addOnFailureListener(e -> mostraToast( "Erro no gravar a modificação!"));
         }
     }
 
