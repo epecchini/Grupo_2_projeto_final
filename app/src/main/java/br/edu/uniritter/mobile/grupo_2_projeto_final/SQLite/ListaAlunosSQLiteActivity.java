@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite.BaseHelper;
 
 public class ListaAlunosSQLiteActivity extends AppCompatActivity {

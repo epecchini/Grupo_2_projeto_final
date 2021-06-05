@@ -7,7 +7,7 @@
     tools:context=".activities.EtapasAlunoActivity">
 
     <ImageButton
-        android:id="@+id/ibBack"
+        android:id="@+id/ibBackCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -37,7 +37,7 @@
         android:layout_marginTop="24dp"
         android:clickable="false"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/ibBack"
+        app:layout_constraintStart_toStartOf="@+id/ibBackCriar"
         app:layout_constraintTop_toBottomOf="@+id/EtapasTitle" />
 
     <TextView

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -21,7 +20,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,7 +27,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
-import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapa;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
@@ -58,13 +55,13 @@ public class EtapasActivity extends AppCompatActivity {
         idEtapa = it.getIntExtra("idEtapa",-1);
         idEtapaAluno = it.getStringExtra("idEtapaAluno");
 
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvSubTitle = (TextView) findViewById(R.id.tvSubTitle);
+        tvTitle = (TextView) findViewById(R.id.tvTitleCriarProf);
+        tvSubTitle = (TextView) findViewById(R.id.tvSubTitleCriar);
         tvTextoEtapa = (TextView) findViewById(R.id.tvTextoEtapa);
         tvLembrete = (TextView) findViewById(R.id.tvLembrete);
         etnLembrete = (EditText) findViewById(R.id.etnLembrete);
         swLembrete = (Switch) findViewById(R.id.swLembrete);
-        btAceitarEtapa = (Button) findViewById(R.id.btAceitarEtapa);
+        btAceitarEtapa = (Button) findViewById(R.id.btConfirmarEtapaCriar);
 
         btAceitarEtapa.setVisibility(it.getIntExtra("showBtAceite", Button.GONE));
 
@@ -74,7 +71,7 @@ public class EtapasActivity extends AppCompatActivity {
 
         tvTitle.setText(it.getStringExtra("tvTitle"));
         tvSubTitle.setText(it.getStringExtra("tvSubTitle"));
-        tvTextoEtapa.setText(it.getStringExtra("tvTextoEtapa"));
+        tvTextoEtapa.setText(FonteDados.getTextoEtapa(idTurma, idEtapa));
         etnLembrete.setText(it.getStringExtra("etnLembreteValue"));
         btAceitarEtapa.setText(it.getStringExtra("btAceitarEtapa"));
         swLembrete.setChecked(it.getBooleanExtra("swLembrete",false));
@@ -155,10 +152,6 @@ public class EtapasActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickIbBack(View view){
-        finish();
-    }
-
     public void onClickAccept(View view){
         FirebaseFirestore store = FirebaseServices.getFirebaseFirestoreInstance();
 
@@ -218,4 +211,8 @@ public class EtapasActivity extends AppCompatActivity {
     }
 
     public void mostraToast(String msg) { Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG).show(); }
+
+    public void onClickIbBack(View view){
+        finish();
+    }
 }

@@ -7,9 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.CadastroActivity;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.TelaCadastroActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
-import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_primeira);
+        setContentView(R.layout.activity_main);
 
         btLogar = findViewById(R.id.btCadastrar);
         btCadastrar = findViewById(R.id.btCadastro);
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void telaCadastrar() {
-        Intent Intent = new Intent(this, CadastroActivity.class);
+        Intent Intent = new Intent(this, TelaCadastroActivity.class);
         startActivity(Intent);
 
     }

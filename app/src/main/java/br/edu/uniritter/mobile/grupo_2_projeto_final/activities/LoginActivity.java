@@ -138,6 +138,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        query = firebaseFirestore.collection("aluno").limit(100);
+        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                List<ClsAluno> list = value.toObjects(ClsAluno.class);
+                for(ClsAluno obj: list){
+                    FonteDados.putAluno(obj);
+                }
+            }
+        });
+
        /* query = firebaseFirestore.collection("turmaAluno").limit(100);
         query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override

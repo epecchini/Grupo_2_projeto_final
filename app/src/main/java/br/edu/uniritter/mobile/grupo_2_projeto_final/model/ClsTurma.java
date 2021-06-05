@@ -1,6 +1,7 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class ClsTurma {
     private String nomeTurma;
     private boolean liberada;
     private boolean encerrada;
+    @Exclude
     private boolean cadastrado = false;
     private List<ClsEtapa> etapa;
 

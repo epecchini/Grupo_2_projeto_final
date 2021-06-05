@@ -38,7 +38,7 @@ public class HomeAlunoActivity extends AppCompatActivity
 
     @Override
     public void bindTurmaAluno(List<ClsTurma> list) {
-        RecyclerView rv = findViewById(R.id.rvInfoGeral);
+        RecyclerView rv = findViewById(R.id.rvHomeAluno);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         //
         rv.setLayoutManager(llm);

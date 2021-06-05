@@ -46,6 +46,8 @@ public class FonteDados {
 
     public static ArrayList<ClsEtapaAluno> getEtapaAluno_list() { return new ArrayList<ClsEtapaAluno>(etapasAluno.values()); }
 
+    public static ArrayList<ClsAluno> getAluno_list() { return new ArrayList<ClsAluno>(alunos.values()); }
+
     public static String getIdEtapaAluno(String idTurma, Integer idEtapa){
         String res = "";
         for (ClsEtapaAluno obj : FonteDados.getEtapaAluno_list()) {
@@ -55,5 +57,31 @@ public class FonteDados {
             }
         }
         return res;
+    }
+
+    public static String getTextoEtapa(String idTurma, Integer idEtapa){
+        String textoEtapa = "Texto não encontrado!";
+
+        for (ClsEtapa obj : FonteDados.getTurma(idTurma).getEtapa()) {
+            if(obj.getIdEtapa() == idEtapa){
+                textoEtapa = obj.getTextoEtapa();
+                break;
+            }
+        }
+
+        return textoEtapa;
+    }
+
+    public static String getDataLimite(String idTurma, Integer idEtapa){
+        String dataLimite = "--/--/----";
+
+        for (ClsEtapa obj : FonteDados.getTurma(idTurma).getEtapa()) {
+            if(obj.getIdEtapa() == idEtapa){
+                dataLimite = obj.getDataLimite();
+                break;
+            }
+        }
+
+        return dataLimite;
     }
 }

@@ -1,4 +1,4 @@
-package br.edu.uniritter.mobile.grupo_2_projeto_final;
+package br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.SQLite.BaseHelper;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.PendenciasActivity;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 
 public class MainSQLiteActivity extends AppCompatActivity {
 

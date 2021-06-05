@@ -69,7 +69,7 @@
         app:srcCompat="@drawable/splash" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvInfoGeral"
+        android:id="@+id/rvHomeAluno"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
-            name="clsTurma"
-            type="br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma" />
+            name="clsAluno"
+            type="br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno" />
     </data>
 
     <LinearLayout
@@ -14,27 +16,27 @@
 
 
         <TextView
-            android:id="@+id/tvTurmaAluno"
+            android:id="@+id/tvNomeAluno"
             android:layout_width="375dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="2dp"
             android:fontFamily="@font/inder"
-            android:text="@{clsTurma.nomeTurma}"
+            android:text="@{clsAluno.nomeAluno + ' ' + clsAluno.sobrenome}"
             android:textAlignment="viewStart"
             android:textAppearance="@style/subTitle01"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <CheckBox
-            android:id="@+id/cbCadastrado"
-            android:layout_width="40dp"
+        <ImageButton
+            android:id="@+id/btNomeAluno"
+            android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_weight="1"
-            android:checked="@{clsTurma.cadastrado}"
-            android:clickable="false" />
+            android:background="@android:color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/rightarrow" />
 
     </LinearLayout>
 </layout>

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import br.edu.uniritter.mobile.grupo_2_projeto_final.CadastroActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.EtapasAlunoActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.databinding.LayoutTurmasAlunoBinding;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;

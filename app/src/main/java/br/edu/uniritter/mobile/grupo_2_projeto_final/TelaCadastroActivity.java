@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.LoginActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.Usuario;
 
-public class CadastroActivity extends AppCompatActivity {
+public class TelaCadastroActivity extends AppCompatActivity {
 
     private EditText etNome;
     private EditText etEmail;
@@ -61,10 +61,10 @@ public class CadastroActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     u.setId(user.getUid());
                     u.salvarDados();
-                    Toast.makeText(CadastroActivity.this, "Cadastro criado", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(CadastroActivity.this, LoginActivity.class));
+                    Toast.makeText(TelaCadastroActivity.this, "Cadastro criado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(TelaCadastroActivity.this, LoginActivity.class));
                 }else{
-                    Toast.makeText(CadastroActivity.this, "Erro ao criar o Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TelaCadastroActivity.this, "Erro ao criar o Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });

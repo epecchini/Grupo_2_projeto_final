@@ -7,7 +7,7 @@
     tools:context=".activities.EtapasActivity">
 
     <Button
-        android:id="@+id/btAceitarEtapa"
+        android:id="@+id/btConfirmarEtapaCriar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -23,7 +23,7 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/tvSubTitle"
+        android:id="@+id/tvSubTitleCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -32,22 +32,22 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleCriarProf"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/ibBack"
+        android:id="@+id/ibBackCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="?attr/actionModeCloseDrawable"
         android:onClick="onClickIbBack"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleCriarProf"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+        app:layout_constraintTop_toTopOf="@+id/tvTitleCriarProf" />
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvTitleCriarProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etnLembrete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitleCriar"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non sollicitudin dolor. Vestibulum eget ante magna. In rhoncus lectus tortor, ut gravida arcu auctor ultricies. Nam et magna accumsan, dapibus felis sit amet, euismod purus. Duis vehicula iaculis nulla. Maecenas vel placerat arcu. Donec non ante sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non sollicitudin dolor. Vestibulum eget ante magna. In rhoncus lectus tortor, ut gravida arcu auctor ultricies. Nam et magna accumsan, dapibus felis sit amet, euismod purus. Duis vehicula iaculis nulla. Maecenas vel placerat arcu. Donec non ante sem." />
 
     <TextView

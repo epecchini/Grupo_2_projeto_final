@@ -264,7 +264,6 @@ public class EtapasAlunoActivity extends AppCompatActivity {
 
         intent.putExtra("idTurma", idTurma);
         intent.putExtra("idEtapa", et);
-        intent.putExtra("tvTextoEtapa", getTextoEtapa(et));
 
         view.getContext().startActivity(intent);
     }
@@ -291,19 +290,6 @@ public class EtapasAlunoActivity extends AppCompatActivity {
         else tvInfo.setText("");
 
         return res;
-    }
-
-    private String getTextoEtapa(Integer idEtapa){
-        String textoEtapa = "Texto não encontrado!";
-
-        for (ClsEtapa obj : FonteDados.getTurma(idTurma).getEtapa()) {
-            if(obj.getIdEtapa() == idEtapa){
-                textoEtapa = obj.getTextoEtapa();
-                break;
-            }
-        }
-
-        return textoEtapa;
     }
 
     private Boolean etapaConcluida(String idEtapaAluno){

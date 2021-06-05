@@ -7,19 +7,18 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvInfoGeral"
+        android:id="@+id/rvHomeProfessor"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btEtapas"
+        app:layout_constraintBottom_toTopOf="@+id/btListaAlunos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle" />
 
     <TextView
         android:id="@+id/bemVindoTitle"
@@ -50,73 +49,41 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btEtapas"
+        android:id="@+id/btListaAlunos"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toTopOf="@+id/btAlunos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/etapaspic" />
-
-    <ImageView
-        android:id="@+id/imgEtapas"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btEtapas"
-        app:layout_constraintStart_toStartOf="@+id/btEtapas"
-        app:srcCompat="@drawable/splash" />
-
-    <TextView
-        android:id="@+id/tvEtapas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Veja as etapas ->"
-        android:textColor="@color/backActivities"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgEtapas"
-        app:layout_constraintStart_toEndOf="@+id/imgEtapas"
-        app:layout_constraintTop_toTopOf="@+id/imgEtapas" />
-
-    <ImageButton
-        android:id="@+id/btAlunos"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toTopOf="@+id/btPendencias"
+        android:onClick="onClickListaAlunos"
+        app:layout_constraintBottom_toTopOf="@+id/btListaPendencias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/alunospic" />
 
     <ImageView
-        android:id="@+id/imgAlunos"
+        android:id="@+id/imgListaAlunos"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btAlunos"
-        app:layout_constraintStart_toStartOf="@+id/btAlunos"
+        app:layout_constraintBottom_toBottomOf="@+id/btListaAlunos"
+        app:layout_constraintStart_toStartOf="@+id/btListaAlunos"
         app:srcCompat="@drawable/splash" />
 
     <TextView
-        android:id="@+id/tvAlunos"
+        android:id="@+id/tvListaAlunos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Veja os alunos ->"
         android:textColor="@color/backActivities"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAlunos"
-        app:layout_constraintStart_toEndOf="@+id/imgAlunos"
-        app:layout_constraintTop_toTopOf="@+id/imgAlunos" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgListaAlunos"
+        app:layout_constraintStart_toEndOf="@+id/imgListaAlunos"
+        app:layout_constraintTop_toTopOf="@+id/imgListaAlunos" />
 
     <ImageButton
-        android:id="@+id/btPendencias"
+        android:id="@+id/btListaPendencias"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
@@ -127,25 +94,39 @@
         app:srcCompat="@drawable/pendenciaspic" />
 
     <ImageView
-        android:id="@+id/imgPendencias"
+        android:id="@+id/imgListaPendencias"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btPendencias"
-        app:layout_constraintStart_toStartOf="@+id/btPendencias"
+        app:layout_constraintBottom_toBottomOf="@+id/btListaPendencias"
+        app:layout_constraintStart_toStartOf="@+id/btListaPendencias"
         app:srcCompat="@drawable/splash" />
 
     <TextView
-        android:id="@+id/tvPendencias"
+        android:id="@+id/tvListaPendencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Veja as pendências ->"
         android:textColor="@color/backActivities"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgPendencias"
-        app:layout_constraintStart_toEndOf="@+id/imgPendencias"
-        app:layout_constraintTop_toTopOf="@+id/imgPendencias" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgListaPendencias"
+        app:layout_constraintStart_toEndOf="@+id/imgListaPendencias"
+        app:layout_constraintTop_toTopOf="@+id/imgListaPendencias" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabtAddTurma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:onClick="addNewTurma"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/rvHomeProfessor"
+        app:layout_constraintEnd_toEndOf="@+id/rvHomeProfessor"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
