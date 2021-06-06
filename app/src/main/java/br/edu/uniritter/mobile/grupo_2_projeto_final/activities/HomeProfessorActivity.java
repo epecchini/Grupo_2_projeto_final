@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,8 +47,6 @@ public class HomeProfessorActivity extends AppCompatActivity
             list.add(FonteDados.getTurma(key));
         }
         bindTurma(list);*/
-
-        bindTurma(FonteDados.getTurma_list());
     }
 
     @Override

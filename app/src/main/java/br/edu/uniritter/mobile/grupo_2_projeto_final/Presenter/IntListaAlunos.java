@@ -5,7 +5,6 @@ import android.content.Context;
 import java.util.List;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
-import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 
 public interface IntListaAlunos {
     interface intListaAlunosPresView {

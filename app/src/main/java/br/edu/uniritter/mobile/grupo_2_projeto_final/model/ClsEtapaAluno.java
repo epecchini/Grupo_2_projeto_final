@@ -12,7 +12,7 @@ public class ClsEtapaAluno {
     private String idAluno;
     private String idTurma;
     private String dataEntrega;
-    private int status;
+    private int status;             // 0 = não iniciada, 1 = aceitada / concluída, 2 = aprovada do prof
     private String dataModificacaoStatus;
     private String ObsProf;
     private int lembreteDias;

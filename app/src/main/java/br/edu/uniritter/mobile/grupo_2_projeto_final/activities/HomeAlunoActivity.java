@@ -2,11 +2,15 @@ package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +18,11 @@ import java.util.List;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntTurmaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
 
 public class HomeAlunoActivity extends AppCompatActivity
         implements IntTurmaAluno.intTurmAlunoPresView {
@@ -26,6 +33,13 @@ public class HomeAlunoActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_aluno);
+
+        Log.i("Eliseo_onCreate_HomeAlunoActivity", "ok");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
 
         List<ClsTurma> list = new ArrayList<>();
 

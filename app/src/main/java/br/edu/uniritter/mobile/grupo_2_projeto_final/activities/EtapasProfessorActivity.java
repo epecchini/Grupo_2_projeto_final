@@ -78,8 +78,6 @@ public class EtapasProfessorActivity extends AppCompatActivity {
         swLiberadaProf = (Switch) findViewById(R.id.swLiberadaProf);
         swEncerradaProf = (Switch) findViewById(R.id.swEncerradaProf);
 
-        getGeralValues();
-
         etTurmaTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

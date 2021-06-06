@@ -1,5 +1,6 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,6 +26,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicReference;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
@@ -30,10 +35,10 @@ import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
 
 public class EtapasActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private String idTurma;
     private Integer idEtapa;
     private String idEtapaAluno;
+    private Boolean continueReg = false;
 
     TextView tvTitle;
     TextView tvSubTitle;
@@ -43,14 +48,21 @@ public class EtapasActivity extends AppCompatActivity {
     Switch swLembrete;
     Button btAceitarEtapa;
 
+    FirebaseFirestore store;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapas);
 
-        mAuth = FirebaseServices.getFirebaseAuth();
+        Log.i("Eliseo_onCreate_etapasActivity", "ok");
+
+        store = FirebaseServices.getFirebaseFirestoreInstance();
 
         Intent it = getIntent();
+
+        Log.i("Eliseo_onCreate_etapasActivity", it.getStringExtra("idEtapaAluno"));
+
         idTurma = it.getStringExtra("idTurma");
         idEtapa = it.getIntExtra("idEtapa",-1);
         idEtapaAluno = it.getStringExtra("idEtapaAluno");
@@ -95,7 +107,11 @@ public class EtapasActivity extends AppCompatActivity {
     }
 
     private void saveChanges(){
-        FirebaseFirestore store = FirebaseServices.getFirebaseFirestoreInstance();
+        setIdTurmaAtual();
+
+        if(!continueReg) return;
+
+        Log.i("Eliseo_saveChanges", FonteDados.getIdAlunoAtual());
 
         Integer etnLembreteValue = 0;
         try { etnLembreteValue = Integer.parseInt(etnLembrete.getText().toString()); } catch (Exception ex) {}
@@ -103,7 +119,7 @@ public class EtapasActivity extends AppCompatActivity {
         if(idEtapaAluno.equals("") || TextUtils.isEmpty(idEtapaAluno)){
             ClsEtapaAluno obj = new ClsEtapaAluno();
 
-            obj.setIdAluno(mAuth.getCurrentUser().getUid());
+            obj.setIdAluno(FonteDados.getIdAlunoAtual());
             obj.setIdTurma(idTurma);
             obj.setIdEtapa(idEtapa);
             obj.setStatus(0);
@@ -130,14 +146,17 @@ public class EtapasActivity extends AppCompatActivity {
     }
 
     public void onClickAccept(View view){
-        FirebaseFirestore store = FirebaseServices.getFirebaseFirestoreInstance();
+        setIdTurmaAtual();
+
+        if(!continueReg) return;
+
+        Log.i("Eliseo_onClickAccept", FonteDados.getIdAlunoAtual());
 
         if(idEtapaAluno.equals("") || TextUtils.isEmpty(idEtapaAluno)){
             ClsEtapaAluno obj = new ClsEtapaAluno();
 
-            obj.setIdAluno(mAuth.getCurrentUser().getUid());
+            obj.setIdAluno(FonteDados.getIdAlunoAtual());
             obj.setIdTurma(idTurma);
-            obj.setStatus(0);
             obj.setLembreteDias(0);
             obj.setEnviarLembrete(0);
 
@@ -147,6 +166,9 @@ public class EtapasActivity extends AppCompatActivity {
 
             for(Integer i = 1; i <= 6; i++) {
                 obj.setIdEtapa(i);
+                obj.setStatus(i == idEtapa ? 1 : 0);
+
+                Log.i("Eliseo_onClickAccept", "setIdEtapa " + i);
 
                 Integer finalI = i;
                 store.collection("etapaAluno").add(obj)
@@ -160,11 +182,42 @@ public class EtapasActivity extends AppCompatActivity {
             Integer etnLembreteValue = 0;
             try { etnLembreteValue = Integer.parseInt(etnLembrete.getText().toString()); } catch (Exception ex) {}
 
+            Log.i("Eliseo_idEtapaAluno", idEtapaAluno);
+
             etapaAluno
                     .update("status", 1, "lembreteDias", etnLembreteValue, "enviarLembrete", swLembrete.isChecked() ? 1 : 0)
                     .addOnSuccessListener(aVoid -> finish())
                     .addOnFailureListener(e -> mostraToast( "Erro no gravar a modificação!"));
         }
+    }
+
+    private void setIdTurmaAtual(){
+        continueReg = true;
+
+        Log.i("Eliseo_idTurma", idTurma);
+        try {
+            Log.i("Eliseo_idAlunoAtual", FonteDados.getIdAlunoAtual());
+        }catch (Exception ex){
+            Log.e("Eliseo_idAlunoAtual", ex.getMessage());
+        }
+
+        DocumentReference aluno = store.collection("alunos").document(FonteDados.getIdAlunoAtual());
+
+        aluno
+                .update("idTurmaAtual", idTurma)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.i("Eliseo_setIdTurmaAtual_onSuccess", continueReg.toString());
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    continueReg = false;
+                    Log.i("Eliseo_setIdTurmaAtual_addOnFailureListener", e.getMessage());
+                    mostraToast( "Erro no gravar a modificação da ID da turma atual!");
+                });
+
+        Log.i("Eliseo_setIdTurmaAtual", continueReg.toString());
     }
 
     public void mostraToast(String msg) { Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG).show(); }

@@ -1,16 +1,14 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;

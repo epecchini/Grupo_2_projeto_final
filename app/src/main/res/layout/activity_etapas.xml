@@ -6,35 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.EtapasActivity">
 
-    <Button
-        android:id="@+id/btConfirmarCadastroAluno"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="onClickAccept"
-        android:text="botão aceite"
-        app:backgroundTint="@color/buttonColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/tvSubTitleCriar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Subtítulo"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleCadastroAluno"
-        tools:ignore="MissingConstraints" />
-
     <ImageButton
         android:id="@+id/ibBackCadastroAluno"
         android:layout_width="wrap_content"
@@ -58,6 +29,19 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTitleCriar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Subtítulo"
+        android:textColor="#0C0C0C"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleCadastroAluno"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvTextoEtapa"
@@ -118,5 +102,21 @@
         app:layout_constraintStart_toEndOf="@+id/etnLembrete"
         app:layout_constraintTop_toTopOf="@+id/etnLembrete"
         app:layout_constraintVertical_bias="0.625"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btConfirmarCadastroAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="onClickAccept"
+        android:text="botão aceite"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

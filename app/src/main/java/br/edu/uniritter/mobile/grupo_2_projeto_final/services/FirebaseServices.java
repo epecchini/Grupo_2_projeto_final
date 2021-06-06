@@ -1,10 +1,20 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.services;
 
+import android.util.Log;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import java.util.List;
+
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsTurma;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 
 public class FirebaseServices {
     private static DatabaseReference database;
@@ -39,11 +49,5 @@ public class FirebaseServices {
             database = FirebaseDatabase.getInstance().getReference();
         }
         return database;
-    }
-    public static FirebaseAuth getFirebaseAuth(){
-        if(mAuth == null){
-            mAuth = FirebaseAuth.getInstance();
-        }
-        return mAuth;
     }
 }

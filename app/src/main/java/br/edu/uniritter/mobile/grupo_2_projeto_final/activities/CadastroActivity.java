@@ -17,11 +17,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.NotNull;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAlunoAuth;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.services.FirebaseServices;
 
@@ -75,34 +77,40 @@ public class CadastroActivity extends AppCompatActivity {
             etConfirmarSenhaAluno.setText("");
             return;
         }else {
-            ClsAluno obj = new ClsAluno();
+            ClsAlunoAuth objAuth = new ClsAlunoAuth();
 
-            obj.setNomeAluno(etNomeAluno.getText().toString());
-            obj.setSobrenome(etSobrenomeAluno.getText().toString());
-            obj.setEmail(etEmailAluno.getText().toString());
-            obj.setSenha(etSenhaAluno.getText().toString());
-            obj.setTentativasAcesso(0);
+            objAuth.setEmail(etEmailAluno.getText().toString());
+            objAuth.setSenha(etSenhaAluno.getText().toString());
 
-            if(!TextUtils.isEmpty(etDataNascimentoAluno.getText().toString())) obj.setDataNasc(etDataNascimentoAluno.getText().toString());
-            if(!TextUtils.isEmpty(etCidadeAluno.getText().toString())) obj.setCidade(etCidadeAluno.getText().toString());
-            if(!TextUtils.isEmpty(etUFaluno.getText().toString())) obj.setUF(etUFaluno.getText().toString());
+            mAuth = FirebaseServices.getFirebaseAuthInstance();
 
-            mAuth = FirebaseAuth.getInstance();
+            mAuth.createUserWithEmailAndPassword(objAuth.getEmail(), objAuth.getSenha().toString())
+                    .addOnCompleteListener(this, task -> {
+                        if(task.isSuccessful()){
+                            DatabaseReference firebase = FirebaseServices.getFirebaseDatabase();
+                            firebase.child("Usuarios").child(mAuth.getCurrentUser().getUid()).setValue(objAuth);
 
-            mAuth.createUserWithEmailAndPassword(obj.getEmail(), obj.getSenha())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        DatabaseReference firebase = FirebaseServices.getFirebaseDatabase();
-                        firebase.child("Usuarios").child(mAuth.getCurrentUser().getUid()).setValue(obj);
+                            FirebaseFirestore store = FirebaseServices.getFirebaseFirestoreInstance();
 
-                        startActivity(new Intent(CadastroActivity.this, LoginActivity.class));
-                    }else{
-                        Toast.makeText(CadastroActivity.this, "Erro ao criar o Login", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+                            ClsAluno obj = new ClsAluno();
+
+                            obj.setIdRealtime(mAuth.getCurrentUser().getUid());
+                            obj.setNomeAluno(etNomeAluno.getText().toString());
+                            obj.setSobrenome(etSobrenomeAluno.getText().toString());
+                            obj.setTentativasAcesso(0);
+                            obj.setEprof(false);
+
+                            if(!TextUtils.isEmpty(etDataNascimentoAluno.getText().toString())) obj.setDataNasc(etDataNascimentoAluno.getText().toString());
+                            if(!TextUtils.isEmpty(etCidadeAluno.getText().toString())) obj.setCidade(etCidadeAluno.getText().toString());
+                            if(!TextUtils.isEmpty(etUFaluno.getText().toString())) obj.setUF(etUFaluno.getText().toString());
+
+                            store.collection("alunos").add(obj)
+                                    .addOnSuccessListener(e -> startActivity(new Intent(CadastroActivity.this, LoginActivity.class)))
+                                    .addOnFailureListener(e -> mostraToast("Erro ao criar o Login no Firestore!"));
+                        }else{
+                            mostraToast("Erro ao criar o Login no Realtime!");
+                        }
+                    });
         }
     }
 

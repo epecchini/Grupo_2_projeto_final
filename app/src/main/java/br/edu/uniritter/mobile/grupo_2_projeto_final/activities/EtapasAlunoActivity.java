@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -84,8 +85,6 @@ public class EtapasAlunoActivity extends AppCompatActivity {
         btAceiteEtapa2 = (ImageButton) findViewById(R.id.btAceiteEtapa2);
         btAceiteEtapa3 = (ImageButton) findViewById(R.id.btAceiteEtapa3);
         btAceiteFinal = (ImageButton) findViewById(R.id.btAceiteFinal);
-
-        getGeralValues();
     }
 
     @Override
@@ -97,11 +96,17 @@ public class EtapasAlunoActivity extends AppCompatActivity {
     private void getGeralValues(){
         Integer orderEtapa;
 
+        Log.i("Eliseo_getGeralValues", idTurma);
+
         for (ClsEtapa obj : FonteDados.getTurma(idTurma).getEtapa()) {
             try { orderEtapa = obj.getIdEtapa(); } catch (NullPointerException ex) { orderEtapa = -1; }
             switch (orderEtapa){
                 case 1:
                     tvTermo.setTag(FonteDados.getIdEtapaAluno(idTurma, orderEtapa));
+
+                    //Log.i("Eliseo_getGeralValues_tvTermo", String.valueOf(orderEtapa));
+                    //Log.i("Eliseo_getGeralValues_tvTermo", FonteDados.getIdEtapaAluno(idTurma, orderEtapa));
+
                     try { tvTermo.setText(obj.getNomeEtapa()); } catch (NullPointerException ex) { tvTermo.setText("Erro!");}
                     try { cbTermo.setChecked(etapaConcluida(tvTermo.getTag().toString())); } catch (NullPointerException ex) { }
                     break;
@@ -192,6 +197,9 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("etnLembreteValue", "0");
                 intent.putExtra("swLembrete", false);
                 tvInfo.setText("");
+
+                Log.i("Eliseo_onClickEtapaTitle_tvTermo", tvTermo.getTag().toString());
+
                 break;
             case R.id.tvProjeto:
                 et = 2;
@@ -205,6 +213,9 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("etnLembreteValue", "0");
                 intent.putExtra("swLembrete", false);
                 tvInfo.setText("");
+
+                Log.i("Eliseo_onClickEtapaTitle_tvProjeto", tvProjeto.getTag().toString());
+
                 break;
             case R.id.tvEtapa1:
                 et = 3;
@@ -218,6 +229,9 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("showLembrete", Button.VISIBLE);
                 intent.putExtra("etnLembreteValue", lembreteDias(tvEtapa1.getTag().toString()));
                 intent.putExtra("swLembrete", enviarLembrete(tvEtapa1.getTag().toString()));
+
+                Log.i("Eliseo_onClickEtapaTitle_tvEtapa1", tvEtapa1.getTag().toString());
+
                 break;
             case R.id.tvEtapa2:
                 et = 4;
@@ -231,6 +245,9 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("showLembrete", Button.VISIBLE);
                 intent.putExtra("etnLembreteValue", lembreteDias(tvEtapa2.getTag().toString()));
                 intent.putExtra("swLembrete", enviarLembrete(tvEtapa2.getTag().toString()));
+
+                Log.i("Eliseo_onClickEtapaTitle_tvEtapa2", tvEtapa2.getTag().toString());
+
                 break;
             case R.id.tvEtapa3:
                 et= 5;
@@ -244,6 +261,9 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("showLembrete", Button.VISIBLE);
                 intent.putExtra("etnLembreteValue", lembreteDias(tvEtapa3.getTag().toString()));
                 intent.putExtra("swLembrete", enviarLembrete(tvEtapa3.getTag().toString()));
+
+                Log.i("Eliseo_onClickEtapaTitle_tvEtapa3", tvEtapa3.getTag().toString());
+
                 break;
             case R.id.tvFinal:
                 et = 6;
@@ -257,10 +277,16 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 intent.putExtra("showLembrete", Button.VISIBLE);
                 intent.putExtra("etnLembreteValue", lembreteDias(tvFinal.getTag().toString()));
                 intent.putExtra("swLembrete", enviarLembrete(tvFinal.getTag().toString()));
+
+                Log.i("Eliseo_onClickEtapaTitle_tvFinal", tvFinal.getTag().toString());
+
                 break;
         }
 
         if (vis == Button.GONE) return;
+
+        Log.i("Eliseo_onClickEtapaTitle_tvTermo", tvTermo.getTag().toString());
+        Log.i("Eliseo_onClickEtapaTitle_et", String.valueOf(et));
 
         intent.putExtra("idTurma", idTurma);
         intent.putExtra("idEtapa", et);
