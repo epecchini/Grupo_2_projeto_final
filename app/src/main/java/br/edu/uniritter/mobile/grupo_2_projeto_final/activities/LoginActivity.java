@@ -121,23 +121,30 @@ public class LoginActivity extends AppCompatActivity {
 
         Log.i("Eliseo_getAllInfo_getCurrentUser", mAuth.getCurrentUser().getUid());
         Log.i("Eliseo_getAllInfo_getIdAlunoAtual", FonteDados.getIdAlunoAtual());
-        Log.i("Eliseo_getAllInfo_getIdAlunoAtual_getIdTurmaAtual", FonteDados.getAlunoAtual().getIdTurmaAtual());
+        try{
+            Log.i("Eliseo_getAllInfo_getIdAlunoAtual_getIdTurmaAtual", FonteDados.getAlunoAtual().getIdTurmaAtual());
+        }catch(Exception ex){}
 
 
-        for (ClsTurma obj : FonteDados.getTurma_list()) {
-            try{
-                Log.i("Eliseo_getAllInfo_obj.getId", obj.getId());
-                obj.setCadastrado(FonteDados.getAlunoAtual().getIdTurmaAtual().equals(obj.getId()));
-            }catch (Exception ex){
-                Log.i("Eliseo_getAllInfo_obj.getId_erro", ex.getMessage());
+        Query queryAlunos = firebaseFirestore.collection("alunos").whereEqualTo("idRealtime", mAuth.getCurrentUser().getUid()).limit(1);
+        queryAlunos.addSnapshotListener((value, error) -> {
+            for (ClsTurma obj : FonteDados.getTurma_list()) {
+                try{
+                    Log.i("Eliseo_getAllInfo_obj.getId", obj.getId());
+                    obj.setCadastrado(FonteDados.getAlunoAtual().getIdTurmaAtual().equals(obj.getId()));
+                }catch (Exception ex){
+                    Log.i("Eliseo_getAllInfo_obj.getId_erro", ex.getMessage());
+                }
             }
-        }
 
-        for (ClsEtapaAluno obj : FonteDados.getTodasAsEtapasDosAluno_list()) {
-            if(obj.getIdAluno().equals(FonteDados.getIdAlunoAtual())) {
-                FonteDados.putEtapaAluno(obj);
+            for (ClsEtapaAluno obj : FonteDados.getTodasAsEtapasDosAluno_list()) {
+                if(obj.getIdAluno().equals(FonteDados.getIdAlunoAtual())) {
+                    FonteDados.putEtapaAluno(obj);
+                }
             }
-        }
+        });
+
+        Log.i("Eliseo_getAllInfo_queryEtapaAluno", FonteDados.getIdAlunoAtual());
 
         Query queryEtapaAluno = firebaseFirestore.collection("etapaAluno").whereEqualTo("idAluno", FonteDados.getIdAlunoAtual()).limit(100);
         queryEtapaAluno.addSnapshotListener((value, error) -> {
