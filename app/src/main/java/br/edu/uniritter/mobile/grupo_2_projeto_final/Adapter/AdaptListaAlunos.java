@@ -1,5 +1,6 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.edu.uniritter.mobile.grupo_2_projeto_final.activities.EstadoAlunoActivity;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.databinding.LayoutAlunoBinding;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
 
@@ -41,9 +43,9 @@ public class AdaptListaAlunos extends RecyclerView.Adapter<AdaptListaAlunos.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //   Intent intent = new Intent(view.getContext(), ListaAlunosActivity.class);
-                //   intent.putExtra("idAluno", holder.bindind.getClsAluno().getId());
-                //   view.getContext().startActivity(intent);
+                Intent intent = new Intent(view.getContext(), EstadoAlunoActivity.class);
+                intent.putExtra("idAluno", holder.bindind.getClsAluno().getId());
+                view.getContext().startActivity(intent);
             }
         });
     }

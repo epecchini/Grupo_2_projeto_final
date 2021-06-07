@@ -1,8 +1,11 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +51,14 @@ public class HomeAlunoActivity extends AppCompatActivity
         }
 
         bindTurmaAluno(list);
+    }
+
+    public void onClick(View view) {
+        if(TextUtils.isEmpty(FonteDados.getAlunoAtual().getIdTurmaAtual())) return;
+
+        Intent intent = new Intent(view.getContext(), EtapasAlunoActivity.class);
+        intent.putExtra("idTurma", FonteDados.getAlunoAtual().getIdTurmaAtual());
+        view.getContext().startActivity(intent);
     }
 
     @Override

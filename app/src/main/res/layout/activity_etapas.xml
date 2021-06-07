@@ -7,18 +7,18 @@
     tools:context=".activities.EtapasActivity">
 
     <ImageButton
-        android:id="@+id/ibBackCadastroAluno"
+        android:id="@+id/ibBackAceiteEtapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="?attr/actionModeCloseDrawable"
         android:onClick="onClickIbBack"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitleCadastroAluno"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAceiteEtapa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvTitleCadastroAluno" />
+        app:layout_constraintTop_toTopOf="@+id/tvTitleAceiteEtapa" />
 
     <TextView
-        android:id="@+id/tvTitleCadastroAluno"
+        android:id="@+id/tvTitleAceiteEtapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -40,7 +40,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleCadastroAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAceiteEtapa"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -105,7 +105,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btConfirmarCadastroAluno"
+        android:id="@+id/btAceiteEtapa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

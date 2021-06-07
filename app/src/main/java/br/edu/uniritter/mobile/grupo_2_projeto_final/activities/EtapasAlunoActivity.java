@@ -285,6 +285,8 @@ public class EtapasAlunoActivity extends AppCompatActivity {
 
         if (vis == Button.GONE) return;
 
+        if(!idTurma.equals(FonteDados.getAlunoAtual().getIdTurmaAtual())) vis = Button.GONE;
+
         Log.i("Eliseo_onClickEtapaTitle_tvTermo", tvTermo.getTag().toString());
         Log.i("Eliseo_onClickEtapaTitle_et", String.valueOf(et));
 

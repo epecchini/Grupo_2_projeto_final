@@ -72,6 +72,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        Query queryEtapaAluno = firebaseFirestore.collection("etapaAluno").limit(500);
+        queryEtapaAluno.addSnapshotListener((value, error) -> {
+            List<ClsEtapaAluno> list = value.toObjects(ClsEtapaAluno.class);
+            for(ClsEtapaAluno obj: list){
+                FonteDados.putTodasAsEtapasDosAluno(obj);
+            }
+        });
+
         btLogar.setOnClickListener(v -> {
             if(TextUtils.isEmpty(etEmail.getText().toString()) || TextUtils.isEmpty(etSenha.getText().toString())) return;
 
@@ -86,9 +94,9 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.e("Eliseo_idProf", ex.getMessage());
                                 }
 
-                                getInfoAlunoAtual();
-
                                 Boolean eProf = !TextUtils.isEmpty(idProf) && idProf.equals(mAuth.getCurrentUser().getUid());
+
+                                if(!eProf) getInfoAlunoAtual();
 
                                 startActivity(new Intent(LoginActivity.this, eProf ? HomeProfessorActivity.class : HomeAlunoActivity.class));
                             } else {
@@ -122,6 +130,12 @@ public class LoginActivity extends AppCompatActivity {
                 obj.setCadastrado(FonteDados.getAlunoAtual().getIdTurmaAtual().equals(obj.getId()));
             }catch (Exception ex){
                 Log.i("Eliseo_getAllInfo_obj.getId_erro", ex.getMessage());
+            }
+        }
+
+        for (ClsEtapaAluno obj : FonteDados.getTodasAsEtapasDosAluno_list()) {
+            if(obj.getIdAluno().equals(FonteDados.getIdAlunoAtual())) {
+                FonteDados.putEtapaAluno(obj);
             }
         }
 

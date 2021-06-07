@@ -1,6 +1,5 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,9 +15,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -26,7 +23,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicReference;
 
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
@@ -67,13 +63,13 @@ public class EtapasActivity extends AppCompatActivity {
         idEtapa = it.getIntExtra("idEtapa",-1);
         idEtapaAluno = it.getStringExtra("idEtapaAluno");
 
-        tvTitle = (TextView) findViewById(R.id.tvTitleCadastroAluno);
+        tvTitle = (TextView) findViewById(R.id.tvTitleAceiteEtapa);
         tvSubTitle = (TextView) findViewById(R.id.tvSubTitleCriar);
         tvTextoEtapa = (TextView) findViewById(R.id.tvTextoEtapa);
         tvLembrete = (TextView) findViewById(R.id.tvLembrete);
         etnLembrete = (EditText) findViewById(R.id.etnLembrete);
         swLembrete = (Switch) findViewById(R.id.swLembrete);
-        btAceitarEtapa = (Button) findViewById(R.id.btConfirmarCadastroAluno);
+        btAceitarEtapa = (Button) findViewById(R.id.btAceiteEtapa);
 
         btAceitarEtapa.setVisibility(it.getIntExtra("showBtAceite", Button.GONE));
 
@@ -205,12 +201,7 @@ public class EtapasActivity extends AppCompatActivity {
 
         aluno
                 .update("idTurmaAtual", idTurma)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.i("Eliseo_setIdTurmaAtual_onSuccess", continueReg.toString());
-                    }
-                })
+                .addOnSuccessListener(aVoid -> Log.i("Eliseo_setIdTurmaAtual_onSuccess", continueReg.toString()))
                 .addOnFailureListener(e -> {
                     continueReg = false;
                     Log.i("Eliseo_setIdTurmaAtual_addOnFailureListener", e.getMessage());

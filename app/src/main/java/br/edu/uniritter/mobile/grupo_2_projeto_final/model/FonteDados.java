@@ -14,6 +14,7 @@ public class FonteDados {
     private static Map<String, ClsAluno> alunos = new HashMap<>();
     private static Map<String, ClsTurma> turmas = new HashMap<>();
     private static Map<String, ClsEtapaAluno> etapasAluno = new HashMap<>();
+    private static Map<String, ClsEtapaAluno> todasAsEtapasDosAluno = new HashMap<>();
     private static String IdAlunoAtual;
 
     public static void putAluno(ClsAluno aluno){ alunos.put(aluno.getId(), aluno); }
@@ -21,6 +22,8 @@ public class FonteDados {
     public static void putTurma(ClsTurma turma){ turmas.put(turma.getId(), turma); }
 
     public static void putEtapaAluno(ClsEtapaAluno etapaAluno){ etapasAluno.put(etapaAluno.getId(), etapaAluno); }
+
+    public static void putTodasAsEtapasDosAluno(ClsEtapaAluno etapaAluno){ todasAsEtapasDosAluno.put(etapaAluno.getId(), etapaAluno); }
 
     public static void setIdAlunoAtual(String idAlunoAtual){ IdAlunoAtual = idAlunoAtual; }
 
@@ -38,6 +41,8 @@ public class FonteDados {
         return etapasAluno.get(id);
     }
 
+    public static ClsEtapaAluno getTodasAsEtapasDosAluno(String id) { return todasAsEtapasDosAluno.get(id); }
+
     public static ClsAluno getAlunoAtual(){
         return alunos.get(IdAlunoAtual);
     }
@@ -52,37 +57,19 @@ public class FonteDados {
 
     public static ArrayList<ClsEtapaAluno> getEtapaAluno_list() { return new ArrayList<ClsEtapaAluno>(etapasAluno.values()); }
 
+    public static ArrayList<ClsEtapaAluno> getTodasAsEtapasDosAluno_list() { return new ArrayList<ClsEtapaAluno>(todasAsEtapasDosAluno.values()); }
+
     public static ArrayList<ClsAluno> getAluno_list() { return new ArrayList<ClsAluno>(alunos.values()); }
 
     public static String getIdEtapaAluno(String idTurma, Integer idEtapa){
         String res = "";
-        String IdAluno = "";
-
-
-
-        if (idEtapa == 1) {
-            Log.i("Eliseo_getIdEtapaAluno_FonteDados_idTurma", idTurma);
-            Log.i("Eliseo_getIdEtapaAluno_FonteDados_FonteDados.getIdAlunoAtual", FonteDados.getIdAlunoAtual());
-            Log.i("Eliseo_getIdEtapaAluno_FonteDados_FonteDados.getEtapaAluno_list", String.valueOf(getEtapaAluno_list().isEmpty()));
-        }
 
         for (ClsEtapaAluno obj : FonteDados.getEtapaAluno_list()) {
-
-           /*if (idEtapa == 1) {
-                Log.i("Eliseo_getIdEtapaAluno_FonteDados_obj.getIdTurma()", obj.getIdTurma());
-                Log.i("Eliseo_getIdEtapaAluno_FonteDados_obj.getIdAluno()", obj.getIdAluno());
-                Log.i("Eliseo_getIdEtapaAluno_FonteDados_obj.getIdEtapa()", String.valueOf(obj.getIdEtapa()));
-            }*/
-
             if(obj.getIdTurma().equals(idTurma) && obj.getIdAluno().equals(FonteDados.getIdAlunoAtual()) && obj.getIdEtapa() == idEtapa){
                 res = obj.getId();
                 break;
             }
         }
-
-        /*if (idEtapa == 1) {
-            Log.i("Eliseo_getIdEtapaAluno_FonteDados_res", res);
-        }*/
 
         return res;
     }

@@ -46,9 +46,9 @@ public class EtapasCriarActivity extends AppCompatActivity {
         idTurma = it.getStringExtra("idTurma");
         idEtapa = it.getIntExtra("idEtapa",-1);
 
-        tvTitleCriarProf = (TextView) findViewById(R.id.tvTitleCadastroAluno);
-        tvSubTitleCriarProf = (TextView) findViewById(R.id.tvSubTitleCriarProf);
-        etTextoEtapaProf = (EditText) findViewById(R.id.etTextoEtapaProf);
+        tvTitleCriarProf = (TextView) findViewById(R.id.tvTitleAceiteEtapa);
+        tvSubTitleCriarProf = (TextView) findViewById(R.id.tvSubTitleAceiteEtapa);
+        etTextoEtapaProf = (EditText) findViewById(R.id.etObsProfAceiteEtapa);
         etdDataLimite = (EditText) findViewById(R.id.etdDataLimite);
 
         tvTitleCriarProf.setText(it.getStringExtra("tvTitleCriar"));
