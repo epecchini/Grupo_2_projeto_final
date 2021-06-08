@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EstadoAlunoActivity">
+
+    <Button
+        android:id="@+id/btBloqueadoEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Este aluno está bloqueado, clique aquí para desbloquar"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/ibBackEstadoAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onClickIbBack"
+        app:layout_constraintBottom_toBottomOf="@+id/TitleEstadoAluno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TitleEstadoAluno" />
+
+    <TextView
+        android:id="@+id/TitleEstadoAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Aluno"
+        android:textColor="#00AEE5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNomeEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Nome aluno"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitleEstadoAluno" />
+
+    <TextView
+        android:id="@+id/tvSobrenomeEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Sobrenome aluno"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvNomeEstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvNomeEstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeEstadoAluno" />
+
+    <View
+        android:id="@+id/dividerEstadoAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvSobrenomeEstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvSobrenomeEstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvSobrenomeEstadoAluno" />
+
+    <CheckBox
+        android:id="@+id/cbTermoEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSobrenomeEstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvSobrenomeEstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/dividerEstadoAluno" />
+
+    <CheckBox
+        android:id="@+id/cbProjetoEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSobrenomeEstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/cbTermoEstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/cbTermoEstadoAluno" />
+
+    <CheckBox
+        android:id="@+id/cbEtapa1EstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btEtapa1EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/cbProjetoEstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/cbProjetoEstadoAluno" />
+
+    <Button
+        android:id="@+id/btEtapa1EstadoAluno"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPendencia"
+        android:text="Pend"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa1EstadoAluno"
+        app:layout_constraintEnd_toEndOf="@+id/cbProjetoEstadoAluno"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa1EstadoAluno"
+        tools:visibility="invisible" />
+
+    <CheckBox
+        android:id="@+id/cbEtapa2EstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/cbEtapa1EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa1EstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa1EstadoAluno" />
+
+    <Button
+        android:id="@+id/btEtapa2EstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPendencia"
+        android:text="Pend"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa2EstadoAluno"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa1EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa1EstadoAluno"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa2EstadoAluno"
+        tools:visibility="invisible" />
+
+    <CheckBox
+        android:id="@+id/cbEtapa3EstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/cbEtapa2EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa2EstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa2EstadoAluno" />
+
+    <Button
+        android:id="@+id/btEtapa3EstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPendencia"
+        android:text="Pend"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/cbEtapa3EstadoAluno"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa2EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa2EstadoAluno"
+        app:layout_constraintTop_toTopOf="@+id/cbEtapa3EstadoAluno"
+        tools:visibility="invisible" />
+
+    <CheckBox
+        android:id="@+id/cbFinalEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:hint="Título etapa não encontrado!"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/cbEtapa3EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/cbEtapa3EstadoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/cbEtapa3EstadoAluno" />
+
+    <Button
+        android:id="@+id/btFinalEstadoAluno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPendencia"
+        android:text="Pend"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/cbFinalEstadoAluno"
+        app:layout_constraintEnd_toEndOf="@+id/btEtapa3EstadoAluno"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa3EstadoAluno"
+        app:layout_constraintTop_toTopOf="@+id/cbFinalEstadoAluno"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

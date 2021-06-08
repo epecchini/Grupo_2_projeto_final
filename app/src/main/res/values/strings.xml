@@ -17,4 +17,14 @@
     <string name="Cadastrar_Senha">Digite sua Senha</string>
     <string name="Cadastrar_Nome">Digite seu Nome Completo</string>
     <string name="Chec_Prof">Professor</string>
+    <string name="turmaCad">Turmas cadastradas</string>
+
+    <string name="hint_nome">Nome <font color='#FF0000'>*</font></string>
+    <string name="hint_sobrenome">Sobrenome <font color='#FF0000'>*</font></string>
+    <string name="hint_email">E-mail <font color='#FF0000'>*</font></string>
+    <string name="hint_senha">Senha <font color='#FF0000'>*</font></string>
+    <string name="hint_confirmarsenha">Confirmar senha <font color='#FF0000'>*</font></string>
+    <string name="hint_empresa">Empresa</string>
+    <string name="hint_inicioestagio">Início estágio</string>
+    <string name="hint_fimestagio">Fim estágio</string>
 </resources>

@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
@@ -32,7 +30,7 @@ public class PendenciasActivity extends AppCompatActivity
 
     @Override
     public void bindPendencias(List<Pendencias> list) {
-        RecyclerView rv = findViewById(R.id.rvInfoGeral);
+        RecyclerView rv = findViewById(R.id.rvHomeAluno);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         //
         rv.setLayoutManager(llm);

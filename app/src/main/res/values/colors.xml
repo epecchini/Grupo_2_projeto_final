@@ -10,4 +10,7 @@
     <color name="backActivities">#FFFFFFFF</color>
     <color name="splashColor">#FF00AEE5</color>
     <color name="buttonColor">#FF00AEE5</color>
+    <color name="adviseText">#FFBEEEFD</color>
+    <color name="pendente">#FFF2C94C</color>
+    <color name="bloqueado">#FFFF0000</color>
 </resources>

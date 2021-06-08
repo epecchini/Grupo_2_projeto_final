@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AceiteEtapaActivity">
+
+    <ImageButton
+        android:id="@+id/ibBackAceiteEtapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onClickIbBack"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAceiteEtapa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitleAceiteEtapa" />
+
+    <TextView
+        android:id="@+id/tvTitleAceiteEtapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Título"
+        android:textColor="#00AEE5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTitleAceiteEtapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Subtítulo"
+        android:textColor="#0C0C0C"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAceiteEtapa"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btAceiteEtapa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="ACEITAR CONCLUSÃO ETAPA"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintBottom_toTopOf="@+id/btRecusarEtapa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btRecusarEtapa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="RECUSAR CONCLUSÃO ETAPA"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etObsProfAceiteEtapa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non sollicitudin dolor. Vestibulum eget ante magna. In rhoncus lectus tortor, ut gravida arcu auctor ultricies. Nam et magna accumsan, dapibus felis sit amet, euismod purus. Duis vehicula iaculis nulla. Maecenas vel placerat arcu. Donec non ante sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non sollicitudin dolor. Vestibulum eget ante magna. In rhoncus lectus tortor, ut gravida arcu auctor ultricies. Nam et magna accumsan, dapibus felis sit amet, euismod purus. Duis vehicula iaculis nulla. Maecenas vel placerat arcu. Donec non ante sem."
+        android:inputType="textMultiLine"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/btAceiteEtapa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitleAceiteEtapa" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

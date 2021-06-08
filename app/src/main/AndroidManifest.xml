@@ -15,20 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Grupo_2_projeto_final">
-        <activity android:name=".PendenciasActivity"></activity>
-        <activity android:name=".ListaAlunosSQLiteActivity" />
-        <activity android:name=".MainSQLiteActivity" />
-        <activity android:name=".CadastroActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".DeBug"></activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.AceiteEtapaActivity"></activity>
+        <activity android:name=".activities.EstadoAlunoActivity" />
+        <activity android:name=".activities.ListaAlunosActivity" />
+        <activity android:name=".activities.CadastroActivity" />
+        <activity android:name=".activities.EtapasCriarActivity" />
+        <activity android:name=".activities.EtapasProfessorActivity" />
+        <activity android:name=".activities.EtapasActivity" />
+        <activity android:name=".activities.EtapasAlunoActivity" />
+        <activity android:name=".PendenciasActivity" />
+        <activity android:name=".SQLite.ListaAlunosSQLiteActivity" />
+        <activity android:name=".SQLite.MainSQLiteActivity" />
+        <activity android:name=".activities.HomeAlunoActivity" />
+        <activity android:name=".activities.HomeProfessorActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

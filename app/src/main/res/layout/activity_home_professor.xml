@@ -6,70 +6,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHomeProfessor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btListaAlunos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TurmaTitle" />
+
     <TextView
         android:id="@+id/bemVindoTitle"
-        android:layout_width="171dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="632dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="top"
         android:text="Bem Vindo!"
         android:textAppearance="@style/loginTitle"
         android:textColor="#00AEE5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <ImageButton
-        android:id="@+id/btEtapas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
-        app:srcCompat="@drawable/ic_frame_13" />
-
-    <TextView
-        android:id="@+id/EtapasTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Etapas"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="446dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TurmaTitle"
-        android:layout_width="205dp"
-        android:layout_height="32dp"
-        android:text="Turma Cadastrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/turmaCad"
         android:textColor="#0C0C0C"
         android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="166dp" />
+        app:layout_constraintStart_toStartOf="@+id/bemVindoTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bemVindoTitle"
+        tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/MostraTurmaCadastrada"
-        android:layout_width="328dp"
-        android:layout_height="31dp"
+    <ImageButton
+        android:id="@+id/btListaAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        android:onClick="onClickListaAlunos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:srcCompat="@drawable/alunospic" />
 
+    <ImageView
+        android:id="@+id/imgListaAlunos"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btListaAlunos"
+        app:layout_constraintStart_toStartOf="@+id/btListaAlunos"
+        app:srcCompat="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/tvListaAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Veja os alunos ->"
+        android:textColor="@color/backActivities"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgListaAlunos"
+        app:layout_constraintStart_toEndOf="@+id/imgListaAlunos"
+        app:layout_constraintTop_toTopOf="@+id/imgListaAlunos" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabtAddTurma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:onClick="addNewTurma"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/rvHomeProfessor"
+        app:layout_constraintEnd_toEndOf="@+id/rvHomeProfessor"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
