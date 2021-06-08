@@ -61,6 +61,12 @@ public class HomeAlunoActivity extends AppCompatActivity
         view.getContext().startActivity(intent);
     }
 
+    public void onClickDadosPessoais(View view) {
+        Intent intent = new Intent(view.getContext(), CadastroActivity.class);
+        intent.putExtra("modificacaoDados", true);
+        view.getContext().startActivity(intent);
+    }
+
     @Override
     public void bindTurmaAluno(List<ClsTurma> list) {
         RecyclerView rv = findViewById(R.id.rvHomeAluno);

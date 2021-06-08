@@ -60,7 +60,7 @@ public class ClsAluno {
     public void setIdTurmaAtual(String idTurmaAtual) { this.idTurmaAtual = idTurmaAtual; }
     public void setNomeAluno(String nomeAluno) { this.nomeAluno = nomeAluno; }
     public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
-    public void setDataNasc(String idade) { this.dataNasc = dataNasc; }
+    public void setDataNasc(String dataNasc) { this.dataNasc = dataNasc; }
     public void setCidade(String cidade) { this.cidade = cidade; }
     public void setUF(String UF) { this.UF = UF; }
     public void setTentativasAcesso(int tentativasAcesso) { this.tentativasAcesso = tentativasAcesso; }

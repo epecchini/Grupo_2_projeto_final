@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     public void telaCadastrar() {
         Intent Intent = new Intent(this, CadastroActivity.class);
         startActivity(Intent);
-
     }
 
     public void telalogar() {

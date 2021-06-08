@@ -16,6 +16,8 @@ public class FonteDados {
     private static Map<String, ClsEtapaAluno> etapasAluno = new HashMap<>();
     private static Map<String, ClsEtapaAluno> todasAsEtapasDosAluno = new HashMap<>();
     private static String IdAlunoAtual;
+    private static String EmailEntrada;
+    private static String SenhaEntrada;
 
     public static void putAluno(ClsAluno aluno){ alunos.put(aluno.getId(), aluno); }
 
@@ -26,6 +28,10 @@ public class FonteDados {
     public static void putTodasAsEtapasDosAluno(ClsEtapaAluno etapaAluno){ todasAsEtapasDosAluno.put(etapaAluno.getId(), etapaAluno); }
 
     public static void setIdAlunoAtual(String idAlunoAtual){ IdAlunoAtual = idAlunoAtual; }
+
+    public static void setEmailEntrada(String emailEntrada){ EmailEntrada = emailEntrada; }
+
+    public static void setSenhaEntrada(String senhaEntrada){ SenhaEntrada = senhaEntrada; }
 
     //---------------------------------------------------------------------------------------------------
 
@@ -50,6 +56,10 @@ public class FonteDados {
     public static String getIdAlunoAtual(){
         return IdAlunoAtual;
     }
+
+    public static String getEmailEntrada(){ return EmailEntrada; }
+
+    public static String getSenhaEntrada(){ return SenhaEntrada; }
 
     //---------------------------------------------------------------------------------------------------
 

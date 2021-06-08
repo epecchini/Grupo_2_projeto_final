@@ -91,18 +91,8 @@ public class EtapasCriarActivity extends AppCompatActivity {
 
         etapaAluno
                 .set(data, SetOptions.merge())
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                       finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        mostraToast( "Erro no gravar a modificação!");
-                    }
-                });
+                .addOnSuccessListener(aVoid -> finish())
+                .addOnFailureListener(e -> mostraToast( "Erro no gravar a modificação!"));
     }
 
     public void mostraToast(String msg) { Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG).show(); }

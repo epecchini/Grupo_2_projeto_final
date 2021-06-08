@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".activities.HomeAlunoActivity">
 
+    <Button
+        android:id="@+id/btDadosPessoais"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickDadosPessoais"
+        android:text="Alterar dados pessoais"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:backgroundTint="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="@+id/rvHomeAluno"
+        app:layout_constraintTop_toTopOf="@+id/bemVindoTitle" />
+
     <TextView
         android:id="@+id/bemVindoTitle"
         android:layout_width="wrap_content"

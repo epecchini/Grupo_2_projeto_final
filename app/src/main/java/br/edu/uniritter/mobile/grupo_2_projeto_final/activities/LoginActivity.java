@@ -94,6 +94,9 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.e("Eliseo_idProf", ex.getMessage());
                                 }
 
+                                FonteDados.setEmailEntrada(etEmail.getText().toString());
+                                FonteDados.setSenhaEntrada(etSenha.getText().toString());
+
                                 Boolean eProf = !TextUtils.isEmpty(idProf) && idProf.equals(mAuth.getCurrentUser().getUid());
 
                                 if(!eProf) getInfoAlunoAtual();
@@ -102,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 // If sign in fails, display a message to the user.-> peguei esse codigo da doc do FireBase
 
-                                Toast.makeText(LoginActivity.this, "Autenticação Falhou.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Autenticação falhou.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
