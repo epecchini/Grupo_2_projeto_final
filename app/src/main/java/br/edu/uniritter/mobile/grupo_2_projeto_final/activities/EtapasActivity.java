@@ -35,6 +35,7 @@ public class EtapasActivity extends AppCompatActivity {
     private Integer idEtapa;
     private String idEtapaAluno;
     private Boolean continueReg = false;
+    private Integer status;
 
     TextView tvTitle;
     TextView tvSubTitle;
@@ -62,6 +63,7 @@ public class EtapasActivity extends AppCompatActivity {
         idTurma = it.getStringExtra("idTurma");
         idEtapa = it.getIntExtra("idEtapa",-1);
         idEtapaAluno = it.getStringExtra("idEtapaAluno");
+        status = it.getIntExtra("status", 1);
 
         tvTitle = (TextView) findViewById(R.id.tvTitleAceiteEtapa);
         tvSubTitle = (TextView) findViewById(R.id.tvSubTitleCriar);
@@ -162,7 +164,7 @@ public class EtapasActivity extends AppCompatActivity {
 
             for(Integer i = 1; i <= 6; i++) {
                 obj.setIdEtapa(i);
-                obj.setStatus(i == idEtapa ? 1 : 0);
+                obj.setStatus(i == idEtapa ? status : 0);
 
                 Log.i("Eliseo_onClickAccept", "setIdEtapa " + i);
 
@@ -181,7 +183,7 @@ public class EtapasActivity extends AppCompatActivity {
             Log.i("Eliseo_idEtapaAluno", idEtapaAluno);
 
             etapaAluno
-                    .update("status", 1, "lembreteDias", etnLembreteValue, "enviarLembrete", swLembrete.isChecked() ? 1 : 0)
+                    .update("status", status, "lembreteDias", etnLembreteValue, "enviarLembrete", swLembrete.isChecked() ? 1 : 0)
                     .addOnSuccessListener(aVoid -> finish())
                     .addOnFailureListener(e -> mostraToast( "Erro no gravar a modificação!"));
         }

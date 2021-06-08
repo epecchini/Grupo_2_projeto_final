@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +20,7 @@ import br.edu.uniritter.mobile.grupo_2_projeto_final.Adapter.AdaptListaAlunos;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.Presenter.IntListaAlunos;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.R;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsAluno;
+import br.edu.uniritter.mobile.grupo_2_projeto_final.model.ClsEtapaAluno;
 import br.edu.uniritter.mobile.grupo_2_projeto_final.model.FonteDados;
 
 public class ListaAlunosActivity extends AppCompatActivity
@@ -24,41 +28,45 @@ public class ListaAlunosActivity extends AppCompatActivity
 
     private IntListaAlunos.intListaAlunosPres presenter;
 
+    RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rgListaAlunosGroup);
+        radioGroup = (RadioGroup) findViewById(R.id.rgListaAlunosGroup);
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                List<ClsAluno> list = new ArrayList<>();
-
-                switch (checkedId){
-                    case R.id.rbListaAlunosAll:
-                        bindListaAlunos(FonteDados.getAluno_list());
-                        break;
-                    case R.id.rbListaAlunosPendente:
-                        for (ClsAluno obj : FonteDados.getAluno_list()) {
-                            list.add(obj);
-                        }
-
-                        bindListaAlunos(list);
-                        break;
-                    case R.id.rbListaAlunosBloqueado:
-                        for (ClsAluno obj : FonteDados.getAluno_list()) {
-                            if(obj.getTentativasAcesso() < 3) list.add(obj);
-                        }
-
-                        bindListaAlunos(list);
-                        break;
-                }
+                onResume();
             }
         });
+    }
 
-        bindListaAlunos(FonteDados.getAluno_list());
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+            case R.id.rbListaAlunosAll:
+                bindListaAlunos(FonteDados.getAluno_list());
+                break;
+            case R.id.rbListaAlunosPendente:
+                List<ClsAluno> list = new ArrayList<>();
+
+                for(ClsEtapaAluno obj: Stream.of(FonteDados.getTodasAsEtapasDosAluno_list()).filter(item-> item.getStatus() == 1).collect(Collectors.toList())){
+                    list.add(FonteDados.getAluno(obj.getIdAluno()));
+                }
+
+                bindListaAlunos(list);
+                break;
+            case R.id.rbListaAlunosBloqueado:
+                bindListaAlunos(Stream.of(FonteDados.getAluno_list()).filter(item-> item.getTentativasAcesso() >= 3).collect(Collectors.toList()));
+                break;
+        }
     }
 
     @Override

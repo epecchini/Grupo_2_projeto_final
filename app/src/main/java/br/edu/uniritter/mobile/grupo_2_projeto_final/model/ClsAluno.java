@@ -1,6 +1,7 @@
 package br.edu.uniritter.mobile.grupo_2_projeto_final.model;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
 public class ClsAluno {
     @DocumentId

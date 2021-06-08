@@ -51,11 +51,11 @@
     <ImageButton
         android:id="@+id/btListaAlunos"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:contentDescription="TODO"
         android:onClick="onClickListaAlunos"
-        app:layout_constraintBottom_toTopOf="@+id/btListaPendencias"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/alunospic" />
@@ -81,39 +81,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/imgListaAlunos"
         app:layout_constraintStart_toEndOf="@+id/imgListaAlunos"
         app:layout_constraintTop_toTopOf="@+id/imgListaAlunos" />
-
-    <ImageButton
-        android:id="@+id/btListaPendencias"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/pendenciaspic" />
-
-    <ImageView
-        android:id="@+id/imgListaPendencias"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btListaPendencias"
-        app:layout_constraintStart_toStartOf="@+id/btListaPendencias"
-        app:srcCompat="@drawable/splash" />
-
-    <TextView
-        android:id="@+id/tvListaPendencias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Veja as pendências ->"
-        android:textColor="@color/backActivities"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgListaPendencias"
-        app:layout_constraintStart_toEndOf="@+id/imgListaPendencias"
-        app:layout_constraintTop_toTopOf="@+id/imgListaPendencias" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabtAddTurma"

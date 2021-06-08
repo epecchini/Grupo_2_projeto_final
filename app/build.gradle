@@ -21,7 +21,17 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    //list filter Eliseo begin
+    buildscript {
+        repositories {
+            jcenter()
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:1.4.0'
+            classpath 'me.tatarka:gradle-retrolambda:3.2.0' // Add this
+        }
+    }
+    //list filter Eliseo end
     buildTypes {
         release {
             minifyEnabled false
@@ -53,6 +63,9 @@ dependencies {
     implementation "com.google.firebase:firebase-auth-ktx:20.0.4"
     implementation "com.google.firebase:firebase-firestore"
 
+    //list filter Eliseo begin
+    implementation 'com.annimon:stream:1.1.2'
+    //list filter Eliseo end
 }
 
 apply plugin: 'com.google.gms.google-services'

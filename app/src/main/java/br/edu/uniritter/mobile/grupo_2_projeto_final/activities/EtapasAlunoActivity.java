@@ -182,11 +182,13 @@ public class EtapasAlunoActivity extends AppCompatActivity {
 
         Integer et = 0;
         Integer vis = Button.VISIBLE;
+        Integer status = 1;
 
         switch(view.getId())
         {
             case R.id.tvTermo:
                 et = 1;
+                status = 2;
                 if(cbTermo.isChecked()) intent.putExtra("showBtAceite", Button.GONE);
                 else intent.putExtra("showBtAceite", Button.VISIBLE);
                 intent.putExtra("tvTitle", "Termo");
@@ -203,6 +205,7 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 break;
             case R.id.tvProjeto:
                 et = 2;
+                status = 2;
                 if(cbProjeto.isChecked()) intent.putExtra("showBtAceite", Button.GONE);
                 else intent.putExtra("showBtAceite", Button.VISIBLE);
                 intent.putExtra("tvTitle", "Projeto");
@@ -292,6 +295,7 @@ public class EtapasAlunoActivity extends AppCompatActivity {
 
         intent.putExtra("idTurma", idTurma);
         intent.putExtra("idEtapa", et);
+        intent.putExtra("status", status);
 
         view.getContext().startActivity(intent);
     }
