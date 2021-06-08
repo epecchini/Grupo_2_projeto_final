@@ -308,13 +308,19 @@ public class EtapasAlunoActivity extends AppCompatActivity {
                 if(cbTermo.isChecked() && cbProjeto.isChecked()) res = Button.VISIBLE;
                 break;
             case 4:
-                if(cbTermo.isChecked() && cbProjeto.isChecked() && cbEtapa1.isChecked()) res = Button.VISIBLE;
+                if(cbTermo.isChecked() && cbProjeto.isChecked()
+                        && cbEtapa1.isChecked()
+                        && swEtapa1.isChecked()) res = Button.VISIBLE;
                 break;
             case 5:
-                if(cbTermo.isChecked() && cbProjeto.isChecked() && cbEtapa1.isChecked() && cbEtapa2.isChecked()) res = Button.VISIBLE;
+                if(cbTermo.isChecked() && cbProjeto.isChecked()
+                        && cbEtapa1.isChecked() && cbEtapa2.isChecked()
+                        && swEtapa1.isChecked() && swEtapa2.isChecked()) res = Button.VISIBLE;
                 break;
             case 6:
-                if(cbTermo.isChecked() && cbProjeto.isChecked() && cbEtapa1.isChecked() && cbEtapa2.isChecked() && cbEtapa3.isChecked()) res = Button.VISIBLE;
+                if(cbTermo.isChecked() && cbProjeto.isChecked()
+                        && cbEtapa1.isChecked() && cbEtapa2.isChecked() && cbEtapa3.isChecked()
+                        && swEtapa1.isChecked() && swEtapa2.isChecked() && swEtapa3.isChecked()) res = Button.VISIBLE;
                 break;
         }
 
