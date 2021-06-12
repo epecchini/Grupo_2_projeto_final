@@ -93,9 +93,9 @@ public class HomeAlunoActivity extends AppCompatActivity
             textY.setText("Y : " + (int)y);
             textZ.setText("Z : " + (int)z);
 
-            //if(event.values[0] > 0) rv.setBackgroundResource(R.drawable.gradiante1);
-            //else if (event.values[0] < 0) rv.setBackgroundResource(R.drawable.gradiante2);
-            // else rv.setBackgroundResource(R.drawable.gradiante0);
+            if(event.values[0] > 0) rv.setBackgroundResource(R.drawable.gradiante1);
+            else if (event.values[0] < 0) rv.setBackgroundResource(R.drawable.gradiante2);
+            else rv.setBackgroundResource(R.drawable.gradiante0);
         }
     };
 
