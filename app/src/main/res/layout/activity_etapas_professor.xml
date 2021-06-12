@@ -1,5 +1,297 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EtapasProfessorActivity">
+
+    <ImageButton
+        android:id="@+id/ibBackProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onClickIbBack"
+        app:layout_constraintBottom_toBottomOf="@+id/ListAlunosTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ListAlunosTitle" />
+
+    <TextView
+        android:id="@+id/ListAlunosTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Etapas"
+        android:textColor="#00AEE5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etTurmaTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Título da turma"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListAlunosTitle" />
+
+    <TextView
+        android:id="@+id/tvTermoProf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btTermoProf"
+        app:layout_constraintEnd_toStartOf="@+id/btTermoProf"
+        app:layout_constraintStart_toStartOf="@+id/ibBackProf"
+        app:layout_constraintTop_toTopOf="@+id/btTermoProf" />
+
+    <ImageButton
+        android:id="@+id/btTermoProf"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTurmaTitle" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvTermoProf"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTermoProf"
+        app:layout_constraintTop_toBottomOf="@+id/btTermoProf" />
+
+    <TextView
+        android:id="@+id/tvProjetoProf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btProjetoProf"
+        app:layout_constraintEnd_toEndOf="@+id/tvTermoProf"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTermoProf"
+        app:layout_constraintTop_toTopOf="@+id/btProjetoProf" />
+
+    <ImageButton
+        android:id="@+id/btProjetoProf"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintStart_toEndOf="@+id/tvTermoProf"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvProjetoProf"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvProjetoProf"
+        app:layout_constraintTop_toBottomOf="@+id/btProjetoProf" />
+
+    <TextView
+        android:id="@+id/tvEtapa1Prof"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btEtapa1Prof"
+        app:layout_constraintEnd_toEndOf="@+id/tvProjetoProf"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvProjetoProf"
+        app:layout_constraintTop_toTopOf="@+id/btEtapa1Prof" />
+
+    <ImageButton
+        android:id="@+id/btEtapa1Prof"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintStart_toEndOf="@+id/tvProjetoProf"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa1Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa1Prof"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa1Prof" />
+
+    <TextView
+        android:id="@+id/tvEtapa2Prof"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btEtapa2Prof"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa1Prof"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa1Prof"
+        app:layout_constraintTop_toTopOf="@+id/btEtapa2Prof" />
+
+    <ImageButton
+        android:id="@+id/btEtapa2Prof"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa1Prof"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <View
+        android:id="@+id/divider4Prof"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa2Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa2Prof"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa2Prof" />
+
+    <TextView
+        android:id="@+id/tvEtapa3Prof"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btEtapa3Prof"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa2Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa2Prof"
+        app:layout_constraintTop_toTopOf="@+id/btEtapa3Prof" />
+
+    <ImageButton
+        android:id="@+id/btEtapa3Prof"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa2Prof"
+        app:layout_constraintTop_toBottomOf="@+id/divider4Prof" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa3Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa3Prof"
+        app:layout_constraintTop_toBottomOf="@+id/btEtapa3Prof" />
+
+    <TextView
+        android:id="@+id/tvFinalProf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Texto não encontrado!"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btFinalProf"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa3Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa3Prof"
+        app:layout_constraintTop_toTopOf="@+id/btFinalProf" />
+
+    <ImageButton
+        android:id="@+id/btFinalProf"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickBt"
+        android:scaleType="center"
+        android:src="@drawable/rightarrow"
+        app:layout_constraintStart_toStartOf="@+id/btEtapa3Prof"
+        app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tvEtapa3Prof"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEtapa3Prof"
+        app:layout_constraintTop_toBottomOf="@+id/btFinalProf" />
+
+    <Switch
+        android:id="@+id/swEncerradaProf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"
+        android:clickable="true"
+        android:text="Turma encerrada"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="@+id/btFinalProf"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvFinalProf"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <Switch
+        android:id="@+id/swLiberadaProf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"
+        android:clickable="true"
+        android:text="Turma liberada"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="@+id/swEncerradaProf"
+        app:layout_constraintStart_toStartOf="@+id/swEncerradaProf"
+        app:layout_constraintTop_toBottomOf="@+id/swEncerradaProf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
